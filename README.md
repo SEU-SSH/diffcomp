@@ -1,6 +1,8 @@
 # diffcomp
 
 ## 目录结构
+
+```
 .
 |-- README.md
 |-- benchmark
@@ -14,3 +16,4 @@
 |-- harness
 |-- harness.c
 `-- ms.sh
+```
