@@ -1,0 +1,1 @@
+/app/AFLplusplus/afl-clang-fast -O0 -fsanitize=address -O3 -DNDEBUG CMakeFiles/strtest.dir/src/strtest.c.o -o strtest 

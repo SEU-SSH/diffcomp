@@ -1,0 +1,1 @@
+/app/AFLplusplus/afl-clang-fast -O3 -fsanitize=address -O3 -DNDEBUG CMakeFiles/tjbench.dir/src/tjbench.c.o CMakeFiles/tjbench.dir/src/tjutil.c.o -o tjbench  -Wl,-rpath,/app/diffcomp/benchmark/libturbo_o3:::: libturbojpeg.so.0.4.0 -lm 

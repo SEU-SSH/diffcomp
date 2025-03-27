@@ -1,0 +1,1 @@
+/app/AFLplusplus/afl-clang-fast -O0 -fsanitize=address -O3 -DNDEBUG CMakeFiles/tjtran.dir/src/tjtran.c.o -o tjtran  -Wl,-rpath,/app/diffcomp/benchmark/libturbo_o0 libturbojpeg.so.0.4.0 

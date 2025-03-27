@@ -1,0 +1,1 @@
+/app/AFLplusplus/afl-clang-fast -O0 -fsanitize=address -O3 -DNDEBUG "CMakeFiles/tjbench-static.dir/src/tjbench.c.o" "CMakeFiles/tjbench-static.dir/src/tjutil.c.o" -o tjbench-static  libturbojpeg.a -lm 

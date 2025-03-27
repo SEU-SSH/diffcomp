@@ -1,0 +1,814 @@
+
+---
+events:
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/CMakeDetermineSystem.cmake:233 (message)"
+      - "CMakeLists.txt:13 (project)"
+    message: |
+      The system is: Linux - 5.15.153.1-microsoft-standard-WSL2 - x86_64
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/usr/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/usr/share/cmake-3.28/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:13 (project)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+      Compiler: /app/AFLplusplus/afl-clang-fast 
+      Build flags: -O3;-fsanitize=address,undefined
+      Id flags:  
+      
+      The output was:
+      0
+      
+      
+      Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
+      
+      The C compiler identification is Clang, found in:
+        /app/diffcomp/benchmark/xpdf-4.05/build/CMakeFiles/3.28.3/CompilerIdC/a.out
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/usr/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/usr/share/cmake-3.28/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:13 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+      Compiler: /app/AFLplusplus/afl-clang-fast++ 
+      Build flags: -O3;-fsanitize=address,undefined
+      Id flags:  
+      
+      The output was:
+      0
+      
+      
+      Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out"
+      
+      The CXX compiler identification is Clang, found in:
+        /app/diffcomp/benchmark/xpdf-4.05/build/CMakeFiles/3.28.3/CompilerIdCXX/a.out
+      
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/CMakeDetermineCompilerABI.cmake:57 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:13 (project)"
+    checks:
+      - "Detecting C compiler ABI info"
+    directories:
+      source: "/app/diffcomp/benchmark/xpdf-4.05/build/CMakeFiles/CMakeScratch/TryCompile-ohNo8q"
+      binary: "/app/diffcomp/benchmark/xpdf-4.05/build/CMakeFiles/CMakeScratch/TryCompile-ohNo8q"
+    cmakeVariables:
+      CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS-NOTFOUND"
+      CMAKE_C_FLAGS: "-O3 -fsanitize=address,undefined"
+    buildResult:
+      variable: "CMAKE_C_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: '/app/diffcomp/benchmark/xpdf-4.05/build/CMakeFiles/CMakeScratch/TryCompile-ohNo8q'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_30196/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_30196.dir/build.make CMakeFiles/cmTC_30196.dir/build
+        gmake[1]: Entering directory '/app/diffcomp/benchmark/xpdf-4.05/build/CMakeFiles/CMakeScratch/TryCompile-ohNo8q'
+        Building C object CMakeFiles/cmTC_30196.dir/CMakeCCompilerABI.c.o
+        /app/AFLplusplus/afl-clang-fast   -O3 -fsanitize=address,undefined    -v -MD -MT CMakeFiles/cmTC_30196.dir/CMakeCCompilerABI.c.o -MF CMakeFiles/cmTC_30196.dir/CMakeCCompilerABI.c.o.d -o CMakeFiles/cmTC_30196.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake-3.28/Modules/CMakeCCompilerABI.c
+        Ubuntu clang version 18.1.8 (++20240731025043+3b5b5c1ec4a3-1~exp1~20240731145144.92)
+        Target: x86_64-pc-linux-gnu
+        Thread model: posix
+        InstalledDir: /usr/lib/llvm-18/bin
+        Found candidate GCC installation: /usr/lib/gcc/x86_64-linux-gnu/13
+        Selected GCC installation: /usr/lib/gcc/x86_64-linux-gnu/13
+        Candidate multilib: .;@m64
+        Selected multilib: .;@m64
+         (in-process)
+         "/usr/lib/llvm-18/bin/clang" -cc1 -triple x86_64-pc-linux-gnu -emit-obj -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCCompilerABI.c -mrelocation-model pic -pic-level 2 -fhalf-no-semantic-interposition -mframe-pointer=all -fmath-errno -ffp-contract=on -fno-rounding-math -mconstructor-aliases -funwind-tables=2 -target-cpu x86-64 -tune-cpu generic -debug-info-kind=constructor -dwarf-version=5 -debugger-tuning=gdb -fdebug-compilation-dir=/app/diffcomp/benchmark/xpdf-4.05/build/CMakeFiles/CMakeScratch/TryCompile-ohNo8q -v -fcoverage-compilation-dir=/app/diffcomp/benchmark/xpdf-4.05/build/CMakeFiles/CMakeScratch/TryCompile-ohNo8q -resource-dir /usr/lib/llvm-18/lib/clang/18 -dependency-file CMakeFiles/cmTC_30196.dir/CMakeCCompilerABI.c.o.d -MT CMakeFiles/cmTC_30196.dir/CMakeCCompilerABI.c.o -sys-header-deps -U _FORTIFY_SOURCE -D __AFL_COMPILER=1 -D FUZZING_BUILD_MODE_UNSAFE_FOR_PRODUCTION=1 -D "__AFL_COVERAGE()=int __afl_selective_coverage = 1;void __afl_coverage_discard();void __afl_coverage_skip();void __afl_coverage_on();void __afl_coverage_off();" -D "__AFL_COVERAGE_START_OFF()=int __afl_selective_coverage_start_off = 1;" -D __AFL_COVERAGE_ON()=__afl_coverage_on() -D __AFL_COVERAGE_OFF()=__afl_coverage_off() -D __AFL_COVERAGE_DISCARD()=__afl_coverage_discard() -D __AFL_COVERAGE_SKIP()=__afl_coverage_skip() -D __AFL_HAVE_MANUAL_CONTROL=1 -D "__AFL_FUZZ_INIT()=int __afl_sharedmem_fuzzing = 1;extern __attribute__((visibility(\\"default\\"))) unsigned int *__afl_fuzz_len;extern __attribute__((visibility(\\"default\\"))) unsigned char *__afl_fuzz_ptr;unsigned char __afl_fuzz_alt[1048576];unsigned char *__afl_fuzz_alt_ptr = __afl_fuzz_alt;" -D "__AFL_FUZZ_TESTCASE_BUF=(__afl_fuzz_ptr ? __afl_fuzz_ptr : __afl_fuzz_alt_ptr)" -D "__AFL_FUZZ_TESTCASE_LEN=(__afl_fuzz_ptr ? *__afl_fuzz_len : (*__afl_fuzz_len = read(0, __afl_fuzz_alt_ptr, 1048576)) == 0xffffffff ? 0 : *__afl_fuzz_len)" -D "__AFL_LOOP(_A)=({ static volatile const char *_B __attribute__((used,unused));  _B = (const char*)\\"##SIG_AFL_PERSISTENT##\\"; extern __attribute__((visibility(\\"default\\"))) int __afl_connected;__attribute__((visibility(\\"default\\"))) int _L(unsigned int) __asm__(\\"__afl_persistent_loop\\"); _L(__afl_connected ? _A : 1); })" -D "__AFL_INIT()=do { static volatile const char *_A __attribute__((used,unused));  _A = (const char*)\\"##SIG_AFL_DEFER_FORKSRV##\\"; __attribute__((visibility(\\"default\\"))) void _I(void) __asm__(\\"__afl_manual_init\\"); _I(); } while (0)" -internal-isystem /usr/lib/llvm-18/lib/clang/18/include -internal-isystem /usr/local/include -internal-isystem /usr/lib/gcc/x86_64-linux-gnu/13/../../../../x86_64-linux-gnu/include -internal-externc-isystem /usr/include/x86_64-linux-gnu -internal-externc-isystem /include -internal-externc-isystem /usr/include -O3 -Wno-unused-command-line-argument -ferror-limit 19 -fsanitize=address,alignment,array-bounds,bool,builtin,enum,float-cast-overflow,function,integer-divide-by-zero,nonnull-attribute,null,object-size,pointer-overflow,return,returns-nonnull-attribute,shift-base,shift-exponent,signed-integer-overflow,unreachable,vla-bound -fsanitize-trap=alignment,array-bounds,bool,builtin,enum,float-cast-overflow,function,integer-divide-by-zero,nonnull-attribute,null,object-size,pointer-overflow,return,returns-nonnull-attribute,shift-base,shift-exponent,signed-integer-overflow,unreachable,vla-bound -fsanitize-system-ignorelist=/usr/lib/llvm-18/lib/clang/18/share/asan_ignorelist.txt -fno-sanitize-memory-param-retval -fsanitize-address-use-after-scope -fsanitize-address-globals-dead-stripping -fno-assume-sane-operator-new -funroll-loops -fgnuc-version=4.2.1 -fskip-odr-check-in-gmf -vectorize-loops -vectorize-slp -fpass-plugin=/app/AFLplusplus/afl-llvm-pass.so -dwarf-debug-flags "/usr/lib/llvm-18/bin/clang -Wno-unused-command-line-argument -fpass-plugin=/app/AFLplusplus/afl-llvm-pass.so -O3 -fsanitize=address,undefined -v -MD -MT CMakeFiles/cmTC_30196.dir/CMakeCCompilerABI.c.o -MF CMakeFiles/cmTC_30196.dir/CMakeCCompilerABI.c.o.d -o CMakeFiles/cmTC_30196.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake-3.28/Modules/CMakeCCompilerABI.c -U _FORTIFY_SOURCE -fsanitize-trap=undefined -fno-omit-frame-pointer -fPIC -g -funroll-loops -D __AFL_COMPILER=1 -D FUZZING_BUILD_MODE_UNSAFE_FOR_PRODUCTION=1 -D __AFL_COVERAGE()=int\\\\ __afl_selective_coverage\\\\ =\\\\ 1;void\\\\ __afl_coverage_discard();void\\\\ __afl_coverage_skip();void\\\\ __afl_coverage_on();void\\\\ __afl_coverage_off(); -D __AFL_COVERAGE_START_OFF()=int\\\\ __afl_selective_coverage_start_off\\\\ =\\\\ 1; -D __AFL_COVERAGE_ON()=__afl_coverage_on() -D __AFL_COVERAGE_OFF()=__afl_coverage_off() -D __AFL_COVERAGE_DISCARD()=__afl_coverage_discard() -D __AFL_COVERAGE_SKIP()=__afl_coverage_skip() -D __AFL_HAVE_MANUAL_CONTROL=1 -D __AFL_FUZZ_INIT()=int\\\\ __afl_sharedmem_fuzzing\\\\ =\\\\ 1;extern\\\\ __attribute__((visibility(\\"default\\")))\\\\ unsigned\\\\ int\\\\ *__afl_fuzz_len;extern\\\\ __attribute__((visibility(\\"default\\")))\\\\ unsigned\\\\ char\\\\ *__afl_fuzz_ptr;unsigned\\\\ char\\\\ __afl_fuzz_alt[1048576];unsigned\\\\ char\\\\ *__afl_fuzz_alt_ptr\\\\ =\\\\ __afl_fuzz_alt; -D __AFL_FUZZ_TESTCASE_BUF=(__afl_fuzz_ptr\\\\ ?\\\\ __afl_fuzz_ptr\\\\ :\\\\ __afl_fuzz_alt_ptr) -D __AFL_FUZZ_TESTCASE_LEN=(__afl_fuzz_ptr\\\\ ?\\\\ *__afl_fuzz_len\\\\ :\\\\ (*__afl_fuzz_len\\\\ =\\\\ read(0,\\\\ __afl_fuzz_alt_ptr,\\\\ 1048576))\\\\ ==\\\\ 0xffffffff\\\\ ?\\\\ 0\\\\ :\\\\ *__afl_fuzz_len) -D __AFL_LOOP(_A)=({\\\\ static\\\\ volatile\\\\ const\\\\ char\\\\ *_B\\\\ __attribute__((used,unused));\\\\ \\\\ _B\\\\ =\\\\ (const\\\\ char*)\\"##SIG_AFL_PERSISTENT##\\";\\\\ extern\\\\ __attribute__((visibility(\\"default\\")))\\\\ int\\\\ __afl_connected;__attribute__((visibility(\\"default\\")))\\\\ int\\\\ _L(unsigned\\\\ int)\\\\ __asm__(\\"__afl_persistent_loop\\");\\\\ _L(__afl_connected\\\\ ?\\\\ _A\\\\ :\\\\ 1);\\\\ }) -D __AFL_INIT()=do\\\\ {\\\\ static\\\\ volatile\\\\ const\\\\ char\\\\ *_A\\\\ __attribute__((used,unused));\\\\ \\\\ _A\\\\ =\\\\ (const\\\\ char*)\\"##SIG_AFL_DEFER_FORKSRV##\\";\\\\ __attribute__((visibility(\\"default\\")))\\\\ void\\\\ _I(void)\\\\ __asm__(\\"__afl_manual_init\\");\\\\ _I();\\\\ }\\\\ while\\\\ (0)" -faddrsig -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_30196.dir/CMakeCCompilerABI.c.o -x c /usr/share/cmake-3.28/Modules/CMakeCCompilerABI.c
+        clang -cc1 version 18.1.8 based upon LLVM 18.1.8 default target x86_64-pc-linux-gnu
+        ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/13/../../../../x86_64-linux-gnu/include"
+        ignoring nonexistent directory "/include"
+        #include "..." search starts here:
+        #include <...> search starts here:
+         /usr/lib/llvm-18/lib/clang/18/include
+         /usr/local/include
+         /usr/include/x86_64-linux-gnu
+         /usr/include
+        End of search list.
+        Linking C executable cmTC_30196
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_30196.dir/link.txt --verbose=1
+        /app/AFLplusplus/afl-clang-fast -O3 -fsanitize=address,undefined   -v -rdynamic CMakeFiles/cmTC_30196.dir/CMakeCCompilerABI.c.o -o cmTC_30196 
+        Ubuntu clang version 18.1.8 (++20240731025043+3b5b5c1ec4a3-1~exp1~20240731145144.92)
+        Target: x86_64-pc-linux-gnu
+        Thread model: posix
+        InstalledDir: /usr/lib/llvm-18/bin
+        Found candidate GCC installation: /usr/lib/gcc/x86_64-linux-gnu/13
+        Selected GCC installation: /usr/lib/gcc/x86_64-linux-gnu/13
+        Candidate multilib: .;@m64
+        Selected multilib: .;@m64
+         "/usr/bin/ld" -z relro --hash-style=gnu --build-id --eh-frame-hdr -m elf_x86_64 -export-dynamic -pie -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_30196 /lib/x86_64-linux-gnu/Scrt1.o /lib/x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/13 -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib64 -L/lib/x86_64-linux-gnu -L/lib/../lib64 -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib64 -L/lib -L/usr/lib --whole-archive /usr/lib/llvm-18/lib/clang/18/lib/linux/libclang_rt.asan_static-x86_64.a --no-whole-archive --whole-archive /usr/lib/llvm-18/lib/clang/18/lib/linux/libclang_rt.asan-x86_64.a --no-whole-archive --dynamic-list=/usr/lib/llvm-18/lib/clang/18/lib/linux/libclang_rt.asan-x86_64.a.syms CMakeFiles/cmTC_30196.dir/CMakeCCompilerABI.c.o /app/AFLplusplus/afl-compiler-rt.o --dynamic-list=/app/AFLplusplus/dynamic_list.txt --no-as-needed -lpthread -lrt -lm -ldl -lresolv -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/x86_64-linux-gnu/13/crtendS.o /lib/x86_64-linux-gnu/crtn.o
+        gmake[1]: Leaving directory '/app/diffcomp/benchmark/xpdf-4.05/build/CMakeFiles/CMakeScratch/TryCompile-ohNo8q'
+        
+      exitCode: 0
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/CMakeDetermineCompilerABI.cmake:127 (message)"
+      - "/usr/share/cmake-3.28/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:13 (project)"
+    message: |
+      Parsed C implicit include dir info: rv=done
+        found start of include info
+        found start of implicit include info
+          add: [/usr/lib/llvm-18/lib/clang/18/include]
+          add: [/usr/local/include]
+          add: [/usr/include/x86_64-linux-gnu]
+          add: [/usr/include]
+        end of search list found
+        collapse include dir [/usr/lib/llvm-18/lib/clang/18/include] ==> [/usr/lib/llvm-18/lib/clang/18/include]
+        collapse include dir [/usr/local/include] ==> [/usr/local/include]
+        collapse include dir [/usr/include/x86_64-linux-gnu] ==> [/usr/include/x86_64-linux-gnu]
+        collapse include dir [/usr/include] ==> [/usr/include]
+        implicit include dirs: [/usr/lib/llvm-18/lib/clang/18/include;/usr/local/include;/usr/include/x86_64-linux-gnu;/usr/include]
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/CMakeDetermineCompilerABI.cmake:159 (message)"
+      - "/usr/share/cmake-3.28/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:13 (project)"
+    message: |
+      Parsed C implicit link information:
+        link line regex: [^( *|.*[/\\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        ignore line: [Change Dir: '/app/diffcomp/benchmark/xpdf-4.05/build/CMakeFiles/CMakeScratch/TryCompile-ohNo8q']
+        ignore line: []
+        ignore line: [Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_30196/fast]
+        ignore line: [/usr/bin/gmake  -f CMakeFiles/cmTC_30196.dir/build.make CMakeFiles/cmTC_30196.dir/build]
+        ignore line: [gmake[1]: Entering directory '/app/diffcomp/benchmark/xpdf-4.05/build/CMakeFiles/CMakeScratch/TryCompile-ohNo8q']
+        ignore line: [Building C object CMakeFiles/cmTC_30196.dir/CMakeCCompilerABI.c.o]
+        ignore line: [/app/AFLplusplus/afl-clang-fast   -O3 -fsanitize=address undefined    -v -MD -MT CMakeFiles/cmTC_30196.dir/CMakeCCompilerABI.c.o -MF CMakeFiles/cmTC_30196.dir/CMakeCCompilerABI.c.o.d -o CMakeFiles/cmTC_30196.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake-3.28/Modules/CMakeCCompilerABI.c]
+        ignore line: [Ubuntu clang version 18.1.8 (++20240731025043+3b5b5c1ec4a3-1~exp1~20240731145144.92)]
+        ignore line: [Target: x86_64-pc-linux-gnu]
+        ignore line: [Thread model: posix]
+        ignore line: [InstalledDir: /usr/lib/llvm-18/bin]
+        ignore line: [Found candidate GCC installation: /usr/lib/gcc/x86_64-linux-gnu/13]
+        ignore line: [Selected GCC installation: /usr/lib/gcc/x86_64-linux-gnu/13]
+        ignore line: [Candidate multilib: .]
+        ignore line: [@m64]
+        ignore line: [Selected multilib: .]
+        ignore line: [@m64]
+        ignore line: [ (in-process)]
+        ignore line: [ "/usr/lib/llvm-18/bin/clang" -cc1 -triple x86_64-pc-linux-gnu -emit-obj -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCCompilerABI.c -mrelocation-model pic -pic-level 2 -fhalf-no-semantic-interposition -mframe-pointer=all -fmath-errno -ffp-contract=on -fno-rounding-math -mconstructor-aliases -funwind-tables=2 -target-cpu x86-64 -tune-cpu generic -debug-info-kind=constructor -dwarf-version=5 -debugger-tuning=gdb -fdebug-compilation-dir=/app/diffcomp/benchmark/xpdf-4.05/build/CMakeFiles/CMakeScratch/TryCompile-ohNo8q -v -fcoverage-compilation-dir=/app/diffcomp/benchmark/xpdf-4.05/build/CMakeFiles/CMakeScratch/TryCompile-ohNo8q -resource-dir /usr/lib/llvm-18/lib/clang/18 -dependency-file CMakeFiles/cmTC_30196.dir/CMakeCCompilerABI.c.o.d -MT CMakeFiles/cmTC_30196.dir/CMakeCCompilerABI.c.o -sys-header-deps -U _FORTIFY_SOURCE -D __AFL_COMPILER=1 -D FUZZING_BUILD_MODE_UNSAFE_FOR_PRODUCTION=1 -D "__AFL_COVERAGE()=int __afl_selective_coverage = 1]
+        ignore line: [void __afl_coverage_discard()]
+        ignore line: [void __afl_coverage_skip()]
+        ignore line: [void __afl_coverage_on()]
+        ignore line: [void __afl_coverage_off()]
+        ignore line: [" -D "__AFL_COVERAGE_START_OFF()=int __afl_selective_coverage_start_off = 1]
+        ignore line: [" -D __AFL_COVERAGE_ON()=__afl_coverage_on() -D __AFL_COVERAGE_OFF()=__afl_coverage_off() -D __AFL_COVERAGE_DISCARD()=__afl_coverage_discard() -D __AFL_COVERAGE_SKIP()=__afl_coverage_skip() -D __AFL_HAVE_MANUAL_CONTROL=1 -D "__AFL_FUZZ_INIT()=int __afl_sharedmem_fuzzing = 1]
+        ignore line: [extern __attribute__((visibility(\\"default\\"))) unsigned int *__afl_fuzz_len]
+        ignore line: [extern __attribute__((visibility(\\"default\\"))) unsigned char *__afl_fuzz_ptr]
+        ignore line: [unsigned char __afl_fuzz_alt[1048576]]
+        ignore line: [unsigned char *__afl_fuzz_alt_ptr = __afl_fuzz_alt]
+        ignore line: [" -D "__AFL_FUZZ_TESTCASE_BUF=(__afl_fuzz_ptr ? __afl_fuzz_ptr : __afl_fuzz_alt_ptr)" -D "__AFL_FUZZ_TESTCASE_LEN=(__afl_fuzz_ptr ? *__afl_fuzz_len : (*__afl_fuzz_len = read(0  __afl_fuzz_alt_ptr  1048576)) == 0xffffffff ? 0 : *__afl_fuzz_len)" -D "__AFL_LOOP(_A)=({ static volatile const char *_B __attribute__((used unused))]
+        ignore line: [  _B = (const char*)\\"##SIG_AFL_PERSISTENT##\\"]
+        ignore line: [ extern __attribute__((visibility(\\"default\\"))) int __afl_connected]
+        ignore line: [__attribute__((visibility(\\"default\\"))) int _L(unsigned int) __asm__(\\"__afl_persistent_loop\\")]
+        ignore line: [ _L(__afl_connected ? _A : 1)]
+        ignore line: [ })" -D "__AFL_INIT()=do { static volatile const char *_A __attribute__((used unused))]
+        ignore line: [  _A = (const char*)\\"##SIG_AFL_DEFER_FORKSRV##\\"]
+        ignore line: [ __attribute__((visibility(\\"default\\"))) void _I(void) __asm__(\\"__afl_manual_init\\")]
+        ignore line: [ _I()]
+        ignore line: [ } while (0)" -internal-isystem /usr/lib/llvm-18/lib/clang/18/include -internal-isystem /usr/local/include -internal-isystem /usr/lib/gcc/x86_64-linux-gnu/13/../../../../x86_64-linux-gnu/include -internal-externc-isystem /usr/include/x86_64-linux-gnu -internal-externc-isystem /include -internal-externc-isystem /usr/include -O3 -Wno-unused-command-line-argument -ferror-limit 19 -fsanitize=address alignment array-bounds bool builtin enum float-cast-overflow function integer-divide-by-zero nonnull-attribute null object-size pointer-overflow return returns-nonnull-attribute shift-base shift-exponent signed-integer-overflow unreachable vla-bound -fsanitize-trap=alignment array-bounds bool builtin enum float-cast-overflow function integer-divide-by-zero nonnull-attribute null object-size pointer-overflow return returns-nonnull-attribute shift-base shift-exponent signed-integer-overflow unreachable vla-bound -fsanitize-system-ignorelist=/usr/lib/llvm-18/lib/clang/18/share/asan_ignorelist.txt -fno-sanitize-memory-param-retval -fsanitize-address-use-after-scope -fsanitize-address-globals-dead-stripping -fno-assume-sane-operator-new -funroll-loops -fgnuc-version=4.2.1 -fskip-odr-check-in-gmf -vectorize-loops -vectorize-slp -fpass-plugin=/app/AFLplusplus/afl-llvm-pass.so -dwarf-debug-flags "/usr/lib/llvm-18/bin/clang -Wno-unused-command-line-argument -fpass-plugin=/app/AFLplusplus/afl-llvm-pass.so -O3 -fsanitize=address undefined -v -MD -MT CMakeFiles/cmTC_30196.dir/CMakeCCompilerABI.c.o -MF CMakeFiles/cmTC_30196.dir/CMakeCCompilerABI.c.o.d -o CMakeFiles/cmTC_30196.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake-3.28/Modules/CMakeCCompilerABI.c -U _FORTIFY_SOURCE -fsanitize-trap=undefined -fno-omit-frame-pointer -fPIC -g -funroll-loops -D __AFL_COMPILER=1 -D FUZZING_BUILD_MODE_UNSAFE_FOR_PRODUCTION=1 -D __AFL_COVERAGE()=int\\\\ __afl_selective_coverage\\\\ =\\\\ 1]
+        ignore line: [void\\\\ __afl_coverage_discard()]
+        ignore line: [void\\\\ __afl_coverage_skip()]
+        ignore line: [void\\\\ __afl_coverage_on()]
+        ignore line: [void\\\\ __afl_coverage_off()]
+        ignore line: [ -D __AFL_COVERAGE_START_OFF()=int\\\\ __afl_selective_coverage_start_off\\\\ =\\\\ 1]
+        ignore line: [ -D __AFL_COVERAGE_ON()=__afl_coverage_on() -D __AFL_COVERAGE_OFF()=__afl_coverage_off() -D __AFL_COVERAGE_DISCARD()=__afl_coverage_discard() -D __AFL_COVERAGE_SKIP()=__afl_coverage_skip() -D __AFL_HAVE_MANUAL_CONTROL=1 -D __AFL_FUZZ_INIT()=int\\\\ __afl_sharedmem_fuzzing\\\\ =\\\\ 1]
+        ignore line: [extern\\\\ __attribute__((visibility(\\"default\\")))\\\\ unsigned\\\\ int\\\\ *__afl_fuzz_len]
+        ignore line: [extern\\\\ __attribute__((visibility(\\"default\\")))\\\\ unsigned\\\\ char\\\\ *__afl_fuzz_ptr]
+        ignore line: [unsigned\\\\ char\\\\ __afl_fuzz_alt[1048576]]
+        ignore line: [unsigned\\\\ char\\\\ *__afl_fuzz_alt_ptr\\\\ =\\\\ __afl_fuzz_alt]
+        ignore line: [ -D __AFL_FUZZ_TESTCASE_BUF=(__afl_fuzz_ptr\\\\ ?\\\\ __afl_fuzz_ptr\\\\ :\\\\ __afl_fuzz_alt_ptr) -D __AFL_FUZZ_TESTCASE_LEN=(__afl_fuzz_ptr\\\\ ?\\\\ *__afl_fuzz_len\\\\ :\\\\ (*__afl_fuzz_len\\\\ =\\\\ read(0 \\\\ __afl_fuzz_alt_ptr \\\\ 1048576))\\\\ ==\\\\ 0xffffffff\\\\ ?\\\\ 0\\\\ :\\\\ *__afl_fuzz_len) -D __AFL_LOOP(_A)=({\\\\ static\\\\ volatile\\\\ const\\\\ char\\\\ *_B\\\\ __attribute__((used unused))]
+        ignore line: [\\\\ \\\\ _B\\\\ =\\\\ (const\\\\ char*)\\"##SIG_AFL_PERSISTENT##\\"]
+        ignore line: [\\\\ extern\\\\ __attribute__((visibility(\\"default\\")))\\\\ int\\\\ __afl_connected]
+        ignore line: [__attribute__((visibility(\\"default\\")))\\\\ int\\\\ _L(unsigned\\\\ int)\\\\ __asm__(\\"__afl_persistent_loop\\")]
+        ignore line: [\\\\ _L(__afl_connected\\\\ ?\\\\ _A\\\\ :\\\\ 1)]
+        ignore line: [\\\\ }) -D __AFL_INIT()=do\\\\ {\\\\ static\\\\ volatile\\\\ const\\\\ char\\\\ *_A\\\\ __attribute__((used unused))]
+        ignore line: [\\\\ \\\\ _A\\\\ =\\\\ (const\\\\ char*)\\"##SIG_AFL_DEFER_FORKSRV##\\"]
+        ignore line: [\\\\ __attribute__((visibility(\\"default\\")))\\\\ void\\\\ _I(void)\\\\ __asm__(\\"__afl_manual_init\\")]
+        ignore line: [\\\\ _I()]
+        ignore line: [\\\\ }\\\\ while\\\\ (0)" -faddrsig -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_30196.dir/CMakeCCompilerABI.c.o -x c /usr/share/cmake-3.28/Modules/CMakeCCompilerABI.c]
+        ignore line: [clang -cc1 version 18.1.8 based upon LLVM 18.1.8 default target x86_64-pc-linux-gnu]
+        ignore line: [ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/13/../../../../x86_64-linux-gnu/include"]
+        ignore line: [ignoring nonexistent directory "/include"]
+        ignore line: [#include "..." search starts here:]
+        ignore line: [#include <...> search starts here:]
+        ignore line: [ /usr/lib/llvm-18/lib/clang/18/include]
+        ignore line: [ /usr/local/include]
+        ignore line: [ /usr/include/x86_64-linux-gnu]
+        ignore line: [ /usr/include]
+        ignore line: [End of search list.]
+        ignore line: [Linking C executable cmTC_30196]
+        ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_30196.dir/link.txt --verbose=1]
+        ignore line: [/app/AFLplusplus/afl-clang-fast -O3 -fsanitize=address undefined   -v -rdynamic CMakeFiles/cmTC_30196.dir/CMakeCCompilerABI.c.o -o cmTC_30196 ]
+        ignore line: [Ubuntu clang version 18.1.8 (++20240731025043+3b5b5c1ec4a3-1~exp1~20240731145144.92)]
+        ignore line: [Target: x86_64-pc-linux-gnu]
+        ignore line: [Thread model: posix]
+        ignore line: [InstalledDir: /usr/lib/llvm-18/bin]
+        ignore line: [Found candidate GCC installation: /usr/lib/gcc/x86_64-linux-gnu/13]
+        ignore line: [Selected GCC installation: /usr/lib/gcc/x86_64-linux-gnu/13]
+        ignore line: [Candidate multilib: .]
+        ignore line: [@m64]
+        ignore line: [Selected multilib: .]
+        ignore line: [@m64]
+        link line: [ "/usr/bin/ld" -z relro --hash-style=gnu --build-id --eh-frame-hdr -m elf_x86_64 -export-dynamic -pie -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_30196 /lib/x86_64-linux-gnu/Scrt1.o /lib/x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/13 -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib64 -L/lib/x86_64-linux-gnu -L/lib/../lib64 -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib64 -L/lib -L/usr/lib --whole-archive /usr/lib/llvm-18/lib/clang/18/lib/linux/libclang_rt.asan_static-x86_64.a --no-whole-archive --whole-archive /usr/lib/llvm-18/lib/clang/18/lib/linux/libclang_rt.asan-x86_64.a --no-whole-archive --dynamic-list=/usr/lib/llvm-18/lib/clang/18/lib/linux/libclang_rt.asan-x86_64.a.syms CMakeFiles/cmTC_30196.dir/CMakeCCompilerABI.c.o /app/AFLplusplus/afl-compiler-rt.o --dynamic-list=/app/AFLplusplus/dynamic_list.txt --no-as-needed -lpthread -lrt -lm -ldl -lresolv -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/x86_64-linux-gnu/13/crtendS.o /lib/x86_64-linux-gnu/crtn.o]
+          arg [/usr/bin/ld] ==> ignore
+          arg [-zrelro] ==> ignore
+          arg [--hash-style=gnu] ==> ignore
+          arg [--build-id] ==> ignore
+          arg [--eh-frame-hdr] ==> ignore
+          arg [-m] ==> ignore
+          arg [elf_x86_64] ==> ignore
+          arg [-export-dynamic] ==> ignore
+          arg [-pie] ==> ignore
+          arg [-dynamic-linker] ==> ignore
+          arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
+          arg [-o] ==> ignore
+          arg [cmTC_30196] ==> ignore
+          arg [/lib/x86_64-linux-gnu/Scrt1.o] ==> obj [/lib/x86_64-linux-gnu/Scrt1.o]
+          arg [/lib/x86_64-linux-gnu/crti.o] ==> obj [/lib/x86_64-linux-gnu/crti.o]
+          arg [/usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o]
+          arg [-L/usr/lib/gcc/x86_64-linux-gnu/13] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/13]
+          arg [-L/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib64] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib64]
+          arg [-L/lib/x86_64-linux-gnu] ==> dir [/lib/x86_64-linux-gnu]
+          arg [-L/lib/../lib64] ==> dir [/lib/../lib64]
+          arg [-L/usr/lib/x86_64-linux-gnu] ==> dir [/usr/lib/x86_64-linux-gnu]
+          arg [-L/usr/lib/../lib64] ==> dir [/usr/lib/../lib64]
+          arg [-L/lib] ==> dir [/lib]
+          arg [-L/usr/lib] ==> dir [/usr/lib]
+          arg [--whole-archive] ==> ignore
+          arg [/usr/lib/llvm-18/lib/clang/18/lib/linux/libclang_rt.asan_static-x86_64.a] ==> lib [/usr/lib/llvm-18/lib/clang/18/lib/linux/libclang_rt.asan_static-x86_64.a]
+          arg [--no-whole-archive] ==> ignore
+          arg [--whole-archive] ==> ignore
+          arg [/usr/lib/llvm-18/lib/clang/18/lib/linux/libclang_rt.asan-x86_64.a] ==> lib [/usr/lib/llvm-18/lib/clang/18/lib/linux/libclang_rt.asan-x86_64.a]
+          arg [--no-whole-archive] ==> ignore
+          arg [--dynamic-list=/usr/lib/llvm-18/lib/clang/18/lib/linux/libclang_rt.asan-x86_64.a.syms] ==> ignore
+          arg [CMakeFiles/cmTC_30196.dir/CMakeCCompilerABI.c.o] ==> ignore
+          arg [/app/AFLplusplus/afl-compiler-rt.o] ==> obj [/app/AFLplusplus/afl-compiler-rt.o]
+          arg [--dynamic-list=/app/AFLplusplus/dynamic_list.txt] ==> ignore
+          arg [--no-as-needed] ==> ignore
+          arg [-lpthread] ==> lib [pthread]
+          arg [-lrt] ==> lib [rt]
+          arg [-lm] ==> lib [m]
+          arg [-ldl] ==> lib [dl]
+          arg [-lresolv] ==> lib [resolv]
+          arg [-lgcc] ==> lib [gcc]
+          arg [--as-needed] ==> ignore
+          arg [-lgcc_s] ==> lib [gcc_s]
+          arg [--no-as-needed] ==> ignore
+          arg [-lc] ==> lib [c]
+          arg [-lgcc] ==> lib [gcc]
+          arg [--as-needed] ==> ignore
+          arg [-lgcc_s] ==> lib [gcc_s]
+          arg [--no-as-needed] ==> ignore
+          arg [/usr/lib/gcc/x86_64-linux-gnu/13/crtendS.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/13/crtendS.o]
+          arg [/lib/x86_64-linux-gnu/crtn.o] ==> obj [/lib/x86_64-linux-gnu/crtn.o]
+        remove lib [/usr/lib/llvm-18/lib/clang/18/lib/linux/libclang_rt.asan_static-x86_64.a]
+        remove lib [/usr/lib/llvm-18/lib/clang/18/lib/linux/libclang_rt.asan-x86_64.a]
+        collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/13] ==> [/usr/lib/gcc/x86_64-linux-gnu/13]
+        collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib64] ==> [/usr/lib64]
+        collapse library dir [/lib/x86_64-linux-gnu] ==> [/lib/x86_64-linux-gnu]
+        collapse library dir [/lib/../lib64] ==> [/lib64]
+        collapse library dir [/usr/lib/x86_64-linux-gnu] ==> [/usr/lib/x86_64-linux-gnu]
+        collapse library dir [/usr/lib/../lib64] ==> [/usr/lib64]
+        collapse library dir [/lib] ==> [/lib]
+        collapse library dir [/usr/lib] ==> [/usr/lib]
+        implicit libs: [pthread;rt;m;dl;resolv;gcc;gcc_s;c;gcc;gcc_s]
+        implicit objs: [/lib/x86_64-linux-gnu/Scrt1.o;/lib/x86_64-linux-gnu/crti.o;/usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o;/app/AFLplusplus/afl-compiler-rt.o;/usr/lib/gcc/x86_64-linux-gnu/13/crtendS.o;/lib/x86_64-linux-gnu/crtn.o]
+        implicit dirs: [/usr/lib/gcc/x86_64-linux-gnu/13;/usr/lib64;/lib/x86_64-linux-gnu;/lib64;/usr/lib/x86_64-linux-gnu;/lib;/usr/lib]
+        implicit fwks: []
+      
+      
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/CMakeDetermineCompilerABI.cmake:57 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:13 (project)"
+    checks:
+      - "Detecting CXX compiler ABI info"
+    directories:
+      source: "/app/diffcomp/benchmark/xpdf-4.05/build/CMakeFiles/CMakeScratch/TryCompile-Yut0FW"
+      binary: "/app/diffcomp/benchmark/xpdf-4.05/build/CMakeFiles/CMakeScratch/TryCompile-Yut0FW"
+    cmakeVariables:
+      CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS-NOTFOUND"
+      CMAKE_CXX_FLAGS: "-O3 -fsanitize=address,undefined"
+    buildResult:
+      variable: "CMAKE_CXX_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: '/app/diffcomp/benchmark/xpdf-4.05/build/CMakeFiles/CMakeScratch/TryCompile-Yut0FW'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_2ecc2/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_2ecc2.dir/build.make CMakeFiles/cmTC_2ecc2.dir/build
+        gmake[1]: Entering directory '/app/diffcomp/benchmark/xpdf-4.05/build/CMakeFiles/CMakeScratch/TryCompile-Yut0FW'
+        Building CXX object CMakeFiles/cmTC_2ecc2.dir/CMakeCXXCompilerABI.cpp.o
+        /app/AFLplusplus/afl-clang-fast++   -O3 -fsanitize=address,undefined    -v -MD -MT CMakeFiles/cmTC_2ecc2.dir/CMakeCXXCompilerABI.cpp.o -MF CMakeFiles/cmTC_2ecc2.dir/CMakeCXXCompilerABI.cpp.o.d -o CMakeFiles/cmTC_2ecc2.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp
+        Ubuntu clang version 18.1.8 (++20240731025043+3b5b5c1ec4a3-1~exp1~20240731145144.92)
+        Target: x86_64-pc-linux-gnu
+        Thread model: posix
+        InstalledDir: /usr/lib/llvm-18/bin
+        Found candidate GCC installation: /usr/lib/gcc/x86_64-linux-gnu/13
+        Selected GCC installation: /usr/lib/gcc/x86_64-linux-gnu/13
+        Candidate multilib: .;@m64
+        Selected multilib: .;@m64
+         (in-process)
+         "/usr/lib/llvm-18/bin/clang" -cc1 -triple x86_64-pc-linux-gnu -emit-obj -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model pic -pic-level 2 -fhalf-no-semantic-interposition -mframe-pointer=all -fmath-errno -ffp-contract=on -fno-rounding-math -mconstructor-aliases -funwind-tables=2 -target-cpu x86-64 -tune-cpu generic -debug-info-kind=constructor -dwarf-version=5 -debugger-tuning=gdb -fdebug-compilation-dir=/app/diffcomp/benchmark/xpdf-4.05/build/CMakeFiles/CMakeScratch/TryCompile-Yut0FW -v -fcoverage-compilation-dir=/app/diffcomp/benchmark/xpdf-4.05/build/CMakeFiles/CMakeScratch/TryCompile-Yut0FW -resource-dir /usr/lib/llvm-18/lib/clang/18 -dependency-file CMakeFiles/cmTC_2ecc2.dir/CMakeCXXCompilerABI.cpp.o.d -MT CMakeFiles/cmTC_2ecc2.dir/CMakeCXXCompilerABI.cpp.o -sys-header-deps -U _FORTIFY_SOURCE -D __AFL_COMPILER=1 -D FUZZING_BUILD_MODE_UNSAFE_FOR_PRODUCTION=1 -D "__AFL_COVERAGE()=int __afl_selective_coverage = 1;extern \\"C\\" void __afl_coverage_discard();extern \\"C\\" void __afl_coverage_skip();extern \\"C\\" void __afl_coverage_on();extern \\"C\\" void __afl_coverage_off();" -D "__AFL_COVERAGE_START_OFF()=int __afl_selective_coverage_start_off = 1;" -D __AFL_COVERAGE_ON()=__afl_coverage_on() -D __AFL_COVERAGE_OFF()=__afl_coverage_off() -D __AFL_COVERAGE_DISCARD()=__afl_coverage_discard() -D __AFL_COVERAGE_SKIP()=__afl_coverage_skip() -D __AFL_HAVE_MANUAL_CONTROL=1 -D "__AFL_FUZZ_INIT()=int __afl_sharedmem_fuzzing = 1;extern __attribute__((visibility(\\"default\\"))) unsigned int *__afl_fuzz_len;extern __attribute__((visibility(\\"default\\"))) unsigned char *__afl_fuzz_ptr;unsigned char __afl_fuzz_alt[1048576];unsigned char *__afl_fuzz_alt_ptr = __afl_fuzz_alt;" -D "__AFL_FUZZ_TESTCASE_BUF=(__afl_fuzz_ptr ? __afl_fuzz_ptr : __afl_fuzz_alt_ptr)" -D "__AFL_FUZZ_TESTCASE_LEN=(__afl_fuzz_ptr ? *__afl_fuzz_len : (*__afl_fuzz_len = read(0, __afl_fuzz_alt_ptr, 1048576)) == 0xffffffff ? 0 : *__afl_fuzz_len)" -D "__AFL_LOOP(_A)=({ static volatile const char *_B __attribute__((used,unused));  _B = (const char*)\\"##SIG_AFL_PERSISTENT##\\"; extern __attribute__((visibility(\\"default\\"))) int __afl_connected;__attribute__((visibility(\\"default\\"))) int _L(unsigned int) __asm__(\\"__afl_persistent_loop\\"); _L(__afl_connected ? _A : 1); })" -D "__AFL_INIT()=do { static volatile const char *_A __attribute__((used,unused));  _A = (const char*)\\"##SIG_AFL_DEFER_FORKSRV##\\"; __attribute__((visibility(\\"default\\"))) void _I(void) __asm__(\\"__afl_manual_init\\"); _I(); } while (0)" -internal-isystem /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13 -internal-isystem /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/x86_64-linux-gnu/c++/13 -internal-isystem /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/backward -internal-isystem /usr/lib/llvm-18/lib/clang/18/include -internal-isystem /usr/local/include -internal-isystem /usr/lib/gcc/x86_64-linux-gnu/13/../../../../x86_64-linux-gnu/include -internal-externc-isystem /usr/include/x86_64-linux-gnu -internal-externc-isystem /include -internal-externc-isystem /usr/include -O3 -Wno-unused-command-line-argument -fdeprecated-macro -ferror-limit 19 -fsanitize=address,alignment,array-bounds,bool,builtin,enum,float-cast-overflow,function,integer-divide-by-zero,nonnull-attribute,null,object-size,pointer-overflow,return,returns-nonnull-attribute,shift-base,shift-exponent,signed-integer-overflow,unreachable,vla-bound -fsanitize-trap=alignment,array-bounds,bool,builtin,enum,float-cast-overflow,function,integer-divide-by-zero,nonnull-attribute,null,object-size,pointer-overflow,return,returns-nonnull-attribute,shift-base,shift-exponent,signed-integer-overflow,unreachable,vla-bound -fsanitize-system-ignorelist=/usr/lib/llvm-18/lib/clang/18/share/asan_ignorelist.txt -fno-sanitize-memory-param-retval -fsanitize-address-use-after-scope -fsanitize-address-globals-dead-stripping -fno-assume-sane-operator-new -funroll-loops -fgnuc-version=4.2.1 -fskip-odr-check-in-gmf -fcxx-exceptions -fexceptions -vectorize-loops -vectorize-slp -fpass-plugin=/app/AFLplusplus/afl-llvm-pass.so -dwarf-debug-flags "/usr/lib/llvm-18/bin/clang --driver-mode=g++ -Wno-unused-command-line-argument -fpass-plugin=/app/AFLplusplus/afl-llvm-pass.so -O3 -fsanitize=address,undefined -v -MD -MT CMakeFiles/cmTC_2ecc2.dir/CMakeCXXCompilerABI.cpp.o -MF CMakeFiles/cmTC_2ecc2.dir/CMakeCXXCompilerABI.cpp.o.d -o CMakeFiles/cmTC_2ecc2.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp -U _FORTIFY_SOURCE -fsanitize-trap=undefined -fno-omit-frame-pointer -fPIC -g -funroll-loops -D __AFL_COMPILER=1 -D FUZZING_BUILD_MODE_UNSAFE_FOR_PRODUCTION=1 -D __AFL_COVERAGE()=int\\\\ __afl_selective_coverage\\\\ =\\\\ 1;extern\\\\ \\"C\\"\\\\ void\\\\ __afl_coverage_discard();extern\\\\ \\"C\\"\\\\ void\\\\ __afl_coverage_skip();extern\\\\ \\"C\\"\\\\ void\\\\ __afl_coverage_on();extern\\\\ \\"C\\"\\\\ void\\\\ __afl_coverage_off(); -D __AFL_COVERAGE_START_OFF()=int\\\\ __afl_selective_coverage_start_off\\\\ =\\\\ 1; -D __AFL_COVERAGE_ON()=__afl_coverage_on() -D __AFL_COVERAGE_OFF()=__afl_coverage_off() -D __AFL_COVERAGE_DISCARD()=__afl_coverage_discard() -D __AFL_COVERAGE_SKIP()=__afl_coverage_skip() -D __AFL_HAVE_MANUAL_CONTROL=1 -D __AFL_FUZZ_INIT()=int\\\\ __afl_sharedmem_fuzzing\\\\ =\\\\ 1;extern\\\\ __attribute__((visibility(\\"default\\")))\\\\ unsigned\\\\ int\\\\ *__afl_fuzz_len;extern\\\\ __attribute__((visibility(\\"default\\")))\\\\ unsigned\\\\ char\\\\ *__afl_fuzz_ptr;unsigned\\\\ char\\\\ __afl_fuzz_alt[1048576];unsigned\\\\ char\\\\ *__afl_fuzz_alt_ptr\\\\ =\\\\ __afl_fuzz_alt; -D __AFL_FUZZ_TESTCASE_BUF=(__afl_fuzz_ptr\\\\ ?\\\\ __afl_fuzz_ptr\\\\ :\\\\ __afl_fuzz_alt_ptr) -D __AFL_FUZZ_TESTCASE_LEN=(__afl_fuzz_ptr\\\\ ?\\\\ *__afl_fuzz_len\\\\ :\\\\ (*__afl_fuzz_len\\\\ =\\\\ read(0,\\\\ __afl_fuzz_alt_ptr,\\\\ 1048576))\\\\ ==\\\\ 0xffffffff\\\\ ?\\\\ 0\\\\ :\\\\ *__afl_fuzz_len) -D __AFL_LOOP(_A)=({\\\\ static\\\\ volatile\\\\ const\\\\ char\\\\ *_B\\\\ __attribute__((used,unused));\\\\ \\\\ _B\\\\ =\\\\ (const\\\\ char*)\\"##SIG_AFL_PERSISTENT##\\";\\\\ extern\\\\ __attribute__((visibility(\\"default\\")))\\\\ int\\\\ __afl_connected;__attribute__((visibility(\\"default\\")))\\\\ int\\\\ _L(unsigned\\\\ int)\\\\ __asm__(\\"__afl_persistent_loop\\");\\\\ _L(__afl_connected\\\\ ?\\\\ _A\\\\ :\\\\ 1);\\\\ }) -D __AFL_INIT()=do\\\\ {\\\\ static\\\\ volatile\\\\ const\\\\ char\\\\ *_A\\\\ __attribute__((used,unused));\\\\ \\\\ _A\\\\ =\\\\ (const\\\\ char*)\\"##SIG_AFL_DEFER_FORKSRV##\\";\\\\ __attribute__((visibility(\\"default\\")))\\\\ void\\\\ _I(void)\\\\ __asm__(\\"__afl_manual_init\\");\\\\ _I();\\\\ }\\\\ while\\\\ (0)" -faddrsig -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_2ecc2.dir/CMakeCXXCompilerABI.cpp.o -x c++ /usr/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp
+        clang -cc1 version 18.1.8 based upon LLVM 18.1.8 default target x86_64-pc-linux-gnu
+        ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/13/../../../../x86_64-linux-gnu/include"
+        ignoring nonexistent directory "/include"
+        #include "..." search starts here:
+        #include <...> search starts here:
+         /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13
+         /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/x86_64-linux-gnu/c++/13
+         /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/backward
+         /usr/lib/llvm-18/lib/clang/18/include
+         /usr/local/include
+         /usr/include/x86_64-linux-gnu
+         /usr/include
+        End of search list.
+        Linking CXX executable cmTC_2ecc2
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_2ecc2.dir/link.txt --verbose=1
+        /app/AFLplusplus/afl-clang-fast++ -O3 -fsanitize=address,undefined   -v -rdynamic CMakeFiles/cmTC_2ecc2.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_2ecc2 
+        Ubuntu clang version 18.1.8 (++20240731025043+3b5b5c1ec4a3-1~exp1~20240731145144.92)
+        Target: x86_64-pc-linux-gnu
+        Thread model: posix
+        InstalledDir: /usr/lib/llvm-18/bin
+        Found candidate GCC installation: /usr/lib/gcc/x86_64-linux-gnu/13
+        Selected GCC installation: /usr/lib/gcc/x86_64-linux-gnu/13
+        Candidate multilib: .;@m64
+        Selected multilib: .;@m64
+         "/usr/bin/ld" -z relro --hash-style=gnu --build-id --eh-frame-hdr -m elf_x86_64 -export-dynamic -pie -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_2ecc2 /lib/x86_64-linux-gnu/Scrt1.o /lib/x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/13 -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib64 -L/lib/x86_64-linux-gnu -L/lib/../lib64 -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib64 -L/lib -L/usr/lib --whole-archive /usr/lib/llvm-18/lib/clang/18/lib/linux/libclang_rt.asan_static-x86_64.a --no-whole-archive --whole-archive /usr/lib/llvm-18/lib/clang/18/lib/linux/libclang_rt.asan-x86_64.a --no-whole-archive --dynamic-list=/usr/lib/llvm-18/lib/clang/18/lib/linux/libclang_rt.asan-x86_64.a.syms --whole-archive /usr/lib/llvm-18/lib/clang/18/lib/linux/libclang_rt.asan_cxx-x86_64.a --no-whole-archive --dynamic-list=/usr/lib/llvm-18/lib/clang/18/lib/linux/libclang_rt.asan_cxx-x86_64.a.syms CMakeFiles/cmTC_2ecc2.dir/CMakeCXXCompilerABI.cpp.o /app/AFLplusplus/afl-compiler-rt.o --dynamic-list=/app/AFLplusplus/dynamic_list.txt -lstdc++ -lm --no-as-needed -lpthread -lrt -lm -ldl -lresolv -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/13/crtendS.o /lib/x86_64-linux-gnu/crtn.o
+        gmake[1]: Leaving directory '/app/diffcomp/benchmark/xpdf-4.05/build/CMakeFiles/CMakeScratch/TryCompile-Yut0FW'
+        
+      exitCode: 0
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/CMakeDetermineCompilerABI.cmake:127 (message)"
+      - "/usr/share/cmake-3.28/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:13 (project)"
+    message: |
+      Parsed CXX implicit include dir info: rv=done
+        found start of include info
+        found start of implicit include info
+          add: [/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13]
+          add: [/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/x86_64-linux-gnu/c++/13]
+          add: [/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/backward]
+          add: [/usr/lib/llvm-18/lib/clang/18/include]
+          add: [/usr/local/include]
+          add: [/usr/include/x86_64-linux-gnu]
+          add: [/usr/include]
+        end of search list found
+        collapse include dir [/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13] ==> [/usr/include/c++/13]
+        collapse include dir [/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/x86_64-linux-gnu/c++/13] ==> [/usr/include/x86_64-linux-gnu/c++/13]
+        collapse include dir [/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/backward] ==> [/usr/include/c++/13/backward]
+        collapse include dir [/usr/lib/llvm-18/lib/clang/18/include] ==> [/usr/lib/llvm-18/lib/clang/18/include]
+        collapse include dir [/usr/local/include] ==> [/usr/local/include]
+        collapse include dir [/usr/include/x86_64-linux-gnu] ==> [/usr/include/x86_64-linux-gnu]
+        collapse include dir [/usr/include] ==> [/usr/include]
+        implicit include dirs: [/usr/include/c++/13;/usr/include/x86_64-linux-gnu/c++/13;/usr/include/c++/13/backward;/usr/lib/llvm-18/lib/clang/18/include;/usr/local/include;/usr/include/x86_64-linux-gnu;/usr/include]
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/CMakeDetermineCompilerABI.cmake:159 (message)"
+      - "/usr/share/cmake-3.28/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:13 (project)"
+    message: |
+      Parsed CXX implicit link information:
+        link line regex: [^( *|.*[/\\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        ignore line: [Change Dir: '/app/diffcomp/benchmark/xpdf-4.05/build/CMakeFiles/CMakeScratch/TryCompile-Yut0FW']
+        ignore line: []
+        ignore line: [Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_2ecc2/fast]
+        ignore line: [/usr/bin/gmake  -f CMakeFiles/cmTC_2ecc2.dir/build.make CMakeFiles/cmTC_2ecc2.dir/build]
+        ignore line: [gmake[1]: Entering directory '/app/diffcomp/benchmark/xpdf-4.05/build/CMakeFiles/CMakeScratch/TryCompile-Yut0FW']
+        ignore line: [Building CXX object CMakeFiles/cmTC_2ecc2.dir/CMakeCXXCompilerABI.cpp.o]
+        ignore line: [/app/AFLplusplus/afl-clang-fast++   -O3 -fsanitize=address undefined    -v -MD -MT CMakeFiles/cmTC_2ecc2.dir/CMakeCXXCompilerABI.cpp.o -MF CMakeFiles/cmTC_2ecc2.dir/CMakeCXXCompilerABI.cpp.o.d -o CMakeFiles/cmTC_2ecc2.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp]
+        ignore line: [Ubuntu clang version 18.1.8 (++20240731025043+3b5b5c1ec4a3-1~exp1~20240731145144.92)]
+        ignore line: [Target: x86_64-pc-linux-gnu]
+        ignore line: [Thread model: posix]
+        ignore line: [InstalledDir: /usr/lib/llvm-18/bin]
+        ignore line: [Found candidate GCC installation: /usr/lib/gcc/x86_64-linux-gnu/13]
+        ignore line: [Selected GCC installation: /usr/lib/gcc/x86_64-linux-gnu/13]
+        ignore line: [Candidate multilib: .]
+        ignore line: [@m64]
+        ignore line: [Selected multilib: .]
+        ignore line: [@m64]
+        ignore line: [ (in-process)]
+        ignore line: [ "/usr/lib/llvm-18/bin/clang" -cc1 -triple x86_64-pc-linux-gnu -emit-obj -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model pic -pic-level 2 -fhalf-no-semantic-interposition -mframe-pointer=all -fmath-errno -ffp-contract=on -fno-rounding-math -mconstructor-aliases -funwind-tables=2 -target-cpu x86-64 -tune-cpu generic -debug-info-kind=constructor -dwarf-version=5 -debugger-tuning=gdb -fdebug-compilation-dir=/app/diffcomp/benchmark/xpdf-4.05/build/CMakeFiles/CMakeScratch/TryCompile-Yut0FW -v -fcoverage-compilation-dir=/app/diffcomp/benchmark/xpdf-4.05/build/CMakeFiles/CMakeScratch/TryCompile-Yut0FW -resource-dir /usr/lib/llvm-18/lib/clang/18 -dependency-file CMakeFiles/cmTC_2ecc2.dir/CMakeCXXCompilerABI.cpp.o.d -MT CMakeFiles/cmTC_2ecc2.dir/CMakeCXXCompilerABI.cpp.o -sys-header-deps -U _FORTIFY_SOURCE -D __AFL_COMPILER=1 -D FUZZING_BUILD_MODE_UNSAFE_FOR_PRODUCTION=1 -D "__AFL_COVERAGE()=int __afl_selective_coverage = 1]
+        ignore line: [extern \\"C\\" void __afl_coverage_discard()]
+        ignore line: [extern \\"C\\" void __afl_coverage_skip()]
+        ignore line: [extern \\"C\\" void __afl_coverage_on()]
+        ignore line: [extern \\"C\\" void __afl_coverage_off()]
+        ignore line: [" -D "__AFL_COVERAGE_START_OFF()=int __afl_selective_coverage_start_off = 1]
+        ignore line: [" -D __AFL_COVERAGE_ON()=__afl_coverage_on() -D __AFL_COVERAGE_OFF()=__afl_coverage_off() -D __AFL_COVERAGE_DISCARD()=__afl_coverage_discard() -D __AFL_COVERAGE_SKIP()=__afl_coverage_skip() -D __AFL_HAVE_MANUAL_CONTROL=1 -D "__AFL_FUZZ_INIT()=int __afl_sharedmem_fuzzing = 1]
+        ignore line: [extern __attribute__((visibility(\\"default\\"))) unsigned int *__afl_fuzz_len]
+        ignore line: [extern __attribute__((visibility(\\"default\\"))) unsigned char *__afl_fuzz_ptr]
+        ignore line: [unsigned char __afl_fuzz_alt[1048576]]
+        ignore line: [unsigned char *__afl_fuzz_alt_ptr = __afl_fuzz_alt]
+        ignore line: [" -D "__AFL_FUZZ_TESTCASE_BUF=(__afl_fuzz_ptr ? __afl_fuzz_ptr : __afl_fuzz_alt_ptr)" -D "__AFL_FUZZ_TESTCASE_LEN=(__afl_fuzz_ptr ? *__afl_fuzz_len : (*__afl_fuzz_len = read(0  __afl_fuzz_alt_ptr  1048576)) == 0xffffffff ? 0 : *__afl_fuzz_len)" -D "__AFL_LOOP(_A)=({ static volatile const char *_B __attribute__((used unused))]
+        ignore line: [  _B = (const char*)\\"##SIG_AFL_PERSISTENT##\\"]
+        ignore line: [ extern __attribute__((visibility(\\"default\\"))) int __afl_connected]
+        ignore line: [__attribute__((visibility(\\"default\\"))) int _L(unsigned int) __asm__(\\"__afl_persistent_loop\\")]
+        ignore line: [ _L(__afl_connected ? _A : 1)]
+        ignore line: [ })" -D "__AFL_INIT()=do { static volatile const char *_A __attribute__((used unused))]
+        ignore line: [  _A = (const char*)\\"##SIG_AFL_DEFER_FORKSRV##\\"]
+        ignore line: [ __attribute__((visibility(\\"default\\"))) void _I(void) __asm__(\\"__afl_manual_init\\")]
+        ignore line: [ _I()]
+        ignore line: [ } while (0)" -internal-isystem /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13 -internal-isystem /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/x86_64-linux-gnu/c++/13 -internal-isystem /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/backward -internal-isystem /usr/lib/llvm-18/lib/clang/18/include -internal-isystem /usr/local/include -internal-isystem /usr/lib/gcc/x86_64-linux-gnu/13/../../../../x86_64-linux-gnu/include -internal-externc-isystem /usr/include/x86_64-linux-gnu -internal-externc-isystem /include -internal-externc-isystem /usr/include -O3 -Wno-unused-command-line-argument -fdeprecated-macro -ferror-limit 19 -fsanitize=address alignment array-bounds bool builtin enum float-cast-overflow function integer-divide-by-zero nonnull-attribute null object-size pointer-overflow return returns-nonnull-attribute shift-base shift-exponent signed-integer-overflow unreachable vla-bound -fsanitize-trap=alignment array-bounds bool builtin enum float-cast-overflow function integer-divide-by-zero nonnull-attribute null object-size pointer-overflow return returns-nonnull-attribute shift-base shift-exponent signed-integer-overflow unreachable vla-bound -fsanitize-system-ignorelist=/usr/lib/llvm-18/lib/clang/18/share/asan_ignorelist.txt -fno-sanitize-memory-param-retval -fsanitize-address-use-after-scope -fsanitize-address-globals-dead-stripping -fno-assume-sane-operator-new -funroll-loops -fgnuc-version=4.2.1 -fskip-odr-check-in-gmf -fcxx-exceptions -fexceptions -vectorize-loops -vectorize-slp -fpass-plugin=/app/AFLplusplus/afl-llvm-pass.so -dwarf-debug-flags "/usr/lib/llvm-18/bin/clang --driver-mode=g++ -Wno-unused-command-line-argument -fpass-plugin=/app/AFLplusplus/afl-llvm-pass.so -O3 -fsanitize=address undefined -v -MD -MT CMakeFiles/cmTC_2ecc2.dir/CMakeCXXCompilerABI.cpp.o -MF CMakeFiles/cmTC_2ecc2.dir/CMakeCXXCompilerABI.cpp.o.d -o CMakeFiles/cmTC_2ecc2.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp -U _FORTIFY_SOURCE -fsanitize-trap=undefined -fno-omit-frame-pointer -fPIC -g -funroll-loops -D __AFL_COMPILER=1 -D FUZZING_BUILD_MODE_UNSAFE_FOR_PRODUCTION=1 -D __AFL_COVERAGE()=int\\\\ __afl_selective_coverage\\\\ =\\\\ 1]
+        ignore line: [extern\\\\ \\"C\\"\\\\ void\\\\ __afl_coverage_discard()]
+        ignore line: [extern\\\\ \\"C\\"\\\\ void\\\\ __afl_coverage_skip()]
+        ignore line: [extern\\\\ \\"C\\"\\\\ void\\\\ __afl_coverage_on()]
+        ignore line: [extern\\\\ \\"C\\"\\\\ void\\\\ __afl_coverage_off()]
+        ignore line: [ -D __AFL_COVERAGE_START_OFF()=int\\\\ __afl_selective_coverage_start_off\\\\ =\\\\ 1]
+        ignore line: [ -D __AFL_COVERAGE_ON()=__afl_coverage_on() -D __AFL_COVERAGE_OFF()=__afl_coverage_off() -D __AFL_COVERAGE_DISCARD()=__afl_coverage_discard() -D __AFL_COVERAGE_SKIP()=__afl_coverage_skip() -D __AFL_HAVE_MANUAL_CONTROL=1 -D __AFL_FUZZ_INIT()=int\\\\ __afl_sharedmem_fuzzing\\\\ =\\\\ 1]
+        ignore line: [extern\\\\ __attribute__((visibility(\\"default\\")))\\\\ unsigned\\\\ int\\\\ *__afl_fuzz_len]
+        ignore line: [extern\\\\ __attribute__((visibility(\\"default\\")))\\\\ unsigned\\\\ char\\\\ *__afl_fuzz_ptr]
+        ignore line: [unsigned\\\\ char\\\\ __afl_fuzz_alt[1048576]]
+        ignore line: [unsigned\\\\ char\\\\ *__afl_fuzz_alt_ptr\\\\ =\\\\ __afl_fuzz_alt]
+        ignore line: [ -D __AFL_FUZZ_TESTCASE_BUF=(__afl_fuzz_ptr\\\\ ?\\\\ __afl_fuzz_ptr\\\\ :\\\\ __afl_fuzz_alt_ptr) -D __AFL_FUZZ_TESTCASE_LEN=(__afl_fuzz_ptr\\\\ ?\\\\ *__afl_fuzz_len\\\\ :\\\\ (*__afl_fuzz_len\\\\ =\\\\ read(0 \\\\ __afl_fuzz_alt_ptr \\\\ 1048576))\\\\ ==\\\\ 0xffffffff\\\\ ?\\\\ 0\\\\ :\\\\ *__afl_fuzz_len) -D __AFL_LOOP(_A)=({\\\\ static\\\\ volatile\\\\ const\\\\ char\\\\ *_B\\\\ __attribute__((used unused))]
+        ignore line: [\\\\ \\\\ _B\\\\ =\\\\ (const\\\\ char*)\\"##SIG_AFL_PERSISTENT##\\"]
+        ignore line: [\\\\ extern\\\\ __attribute__((visibility(\\"default\\")))\\\\ int\\\\ __afl_connected]
+        ignore line: [__attribute__((visibility(\\"default\\")))\\\\ int\\\\ _L(unsigned\\\\ int)\\\\ __asm__(\\"__afl_persistent_loop\\")]
+        ignore line: [\\\\ _L(__afl_connected\\\\ ?\\\\ _A\\\\ :\\\\ 1)]
+        ignore line: [\\\\ }) -D __AFL_INIT()=do\\\\ {\\\\ static\\\\ volatile\\\\ const\\\\ char\\\\ *_A\\\\ __attribute__((used unused))]
+        ignore line: [\\\\ \\\\ _A\\\\ =\\\\ (const\\\\ char*)\\"##SIG_AFL_DEFER_FORKSRV##\\"]
+        ignore line: [\\\\ __attribute__((visibility(\\"default\\")))\\\\ void\\\\ _I(void)\\\\ __asm__(\\"__afl_manual_init\\")]
+        ignore line: [\\\\ _I()]
+        ignore line: [\\\\ }\\\\ while\\\\ (0)" -faddrsig -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_2ecc2.dir/CMakeCXXCompilerABI.cpp.o -x c++ /usr/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp]
+        ignore line: [clang -cc1 version 18.1.8 based upon LLVM 18.1.8 default target x86_64-pc-linux-gnu]
+        ignore line: [ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/13/../../../../x86_64-linux-gnu/include"]
+        ignore line: [ignoring nonexistent directory "/include"]
+        ignore line: [#include "..." search starts here:]
+        ignore line: [#include <...> search starts here:]
+        ignore line: [ /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13]
+        ignore line: [ /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/x86_64-linux-gnu/c++/13]
+        ignore line: [ /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/backward]
+        ignore line: [ /usr/lib/llvm-18/lib/clang/18/include]
+        ignore line: [ /usr/local/include]
+        ignore line: [ /usr/include/x86_64-linux-gnu]
+        ignore line: [ /usr/include]
+        ignore line: [End of search list.]
+        ignore line: [Linking CXX executable cmTC_2ecc2]
+        ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_2ecc2.dir/link.txt --verbose=1]
+        ignore line: [/app/AFLplusplus/afl-clang-fast++ -O3 -fsanitize=address undefined   -v -rdynamic CMakeFiles/cmTC_2ecc2.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_2ecc2 ]
+        ignore line: [Ubuntu clang version 18.1.8 (++20240731025043+3b5b5c1ec4a3-1~exp1~20240731145144.92)]
+        ignore line: [Target: x86_64-pc-linux-gnu]
+        ignore line: [Thread model: posix]
+        ignore line: [InstalledDir: /usr/lib/llvm-18/bin]
+        ignore line: [Found candidate GCC installation: /usr/lib/gcc/x86_64-linux-gnu/13]
+        ignore line: [Selected GCC installation: /usr/lib/gcc/x86_64-linux-gnu/13]
+        ignore line: [Candidate multilib: .]
+        ignore line: [@m64]
+        ignore line: [Selected multilib: .]
+        ignore line: [@m64]
+        link line: [ "/usr/bin/ld" -z relro --hash-style=gnu --build-id --eh-frame-hdr -m elf_x86_64 -export-dynamic -pie -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_2ecc2 /lib/x86_64-linux-gnu/Scrt1.o /lib/x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/13 -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib64 -L/lib/x86_64-linux-gnu -L/lib/../lib64 -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib64 -L/lib -L/usr/lib --whole-archive /usr/lib/llvm-18/lib/clang/18/lib/linux/libclang_rt.asan_static-x86_64.a --no-whole-archive --whole-archive /usr/lib/llvm-18/lib/clang/18/lib/linux/libclang_rt.asan-x86_64.a --no-whole-archive --dynamic-list=/usr/lib/llvm-18/lib/clang/18/lib/linux/libclang_rt.asan-x86_64.a.syms --whole-archive /usr/lib/llvm-18/lib/clang/18/lib/linux/libclang_rt.asan_cxx-x86_64.a --no-whole-archive --dynamic-list=/usr/lib/llvm-18/lib/clang/18/lib/linux/libclang_rt.asan_cxx-x86_64.a.syms CMakeFiles/cmTC_2ecc2.dir/CMakeCXXCompilerABI.cpp.o /app/AFLplusplus/afl-compiler-rt.o --dynamic-list=/app/AFLplusplus/dynamic_list.txt -lstdc++ -lm --no-as-needed -lpthread -lrt -lm -ldl -lresolv -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/13/crtendS.o /lib/x86_64-linux-gnu/crtn.o]
+          arg [/usr/bin/ld] ==> ignore
+          arg [-zrelro] ==> ignore
+          arg [--hash-style=gnu] ==> ignore
+          arg [--build-id] ==> ignore
+          arg [--eh-frame-hdr] ==> ignore
+          arg [-m] ==> ignore
+          arg [elf_x86_64] ==> ignore
+          arg [-export-dynamic] ==> ignore
+          arg [-pie] ==> ignore
+          arg [-dynamic-linker] ==> ignore
+          arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
+          arg [-o] ==> ignore
+          arg [cmTC_2ecc2] ==> ignore
+          arg [/lib/x86_64-linux-gnu/Scrt1.o] ==> obj [/lib/x86_64-linux-gnu/Scrt1.o]
+          arg [/lib/x86_64-linux-gnu/crti.o] ==> obj [/lib/x86_64-linux-gnu/crti.o]
+          arg [/usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o]
+          arg [-L/usr/lib/gcc/x86_64-linux-gnu/13] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/13]
+          arg [-L/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib64] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib64]
+          arg [-L/lib/x86_64-linux-gnu] ==> dir [/lib/x86_64-linux-gnu]
+          arg [-L/lib/../lib64] ==> dir [/lib/../lib64]
+          arg [-L/usr/lib/x86_64-linux-gnu] ==> dir [/usr/lib/x86_64-linux-gnu]
+          arg [-L/usr/lib/../lib64] ==> dir [/usr/lib/../lib64]
+          arg [-L/lib] ==> dir [/lib]
+          arg [-L/usr/lib] ==> dir [/usr/lib]
+          arg [--whole-archive] ==> ignore
+          arg [/usr/lib/llvm-18/lib/clang/18/lib/linux/libclang_rt.asan_static-x86_64.a] ==> lib [/usr/lib/llvm-18/lib/clang/18/lib/linux/libclang_rt.asan_static-x86_64.a]
+          arg [--no-whole-archive] ==> ignore
+          arg [--whole-archive] ==> ignore
+          arg [/usr/lib/llvm-18/lib/clang/18/lib/linux/libclang_rt.asan-x86_64.a] ==> lib [/usr/lib/llvm-18/lib/clang/18/lib/linux/libclang_rt.asan-x86_64.a]
+          arg [--no-whole-archive] ==> ignore
+          arg [--dynamic-list=/usr/lib/llvm-18/lib/clang/18/lib/linux/libclang_rt.asan-x86_64.a.syms] ==> ignore
+          arg [--whole-archive] ==> ignore
+          arg [/usr/lib/llvm-18/lib/clang/18/lib/linux/libclang_rt.asan_cxx-x86_64.a] ==> lib [/usr/lib/llvm-18/lib/clang/18/lib/linux/libclang_rt.asan_cxx-x86_64.a]
+          arg [--no-whole-archive] ==> ignore
+          arg [--dynamic-list=/usr/lib/llvm-18/lib/clang/18/lib/linux/libclang_rt.asan_cxx-x86_64.a.syms] ==> ignore
+          arg [CMakeFiles/cmTC_2ecc2.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+          arg [/app/AFLplusplus/afl-compiler-rt.o] ==> obj [/app/AFLplusplus/afl-compiler-rt.o]
+          arg [--dynamic-list=/app/AFLplusplus/dynamic_list.txt] ==> ignore
+          arg [-lstdc++] ==> lib [stdc++]
+          arg [-lm] ==> lib [m]
+          arg [--no-as-needed] ==> ignore
+          arg [-lpthread] ==> lib [pthread]
+          arg [-lrt] ==> lib [rt]
+          arg [-lm] ==> lib [m]
+          arg [-ldl] ==> lib [dl]
+          arg [-lresolv] ==> lib [resolv]
+          arg [-lgcc_s] ==> lib [gcc_s]
+          arg [-lgcc] ==> lib [gcc]
+          arg [-lc] ==> lib [c]
+          arg [-lgcc_s] ==> lib [gcc_s]
+          arg [-lgcc] ==> lib [gcc]
+          arg [/usr/lib/gcc/x86_64-linux-gnu/13/crtendS.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/13/crtendS.o]
+          arg [/lib/x86_64-linux-gnu/crtn.o] ==> obj [/lib/x86_64-linux-gnu/crtn.o]
+        remove lib [/usr/lib/llvm-18/lib/clang/18/lib/linux/libclang_rt.asan_static-x86_64.a]
+        remove lib [/usr/lib/llvm-18/lib/clang/18/lib/linux/libclang_rt.asan-x86_64.a]
+        remove lib [/usr/lib/llvm-18/lib/clang/18/lib/linux/libclang_rt.asan_cxx-x86_64.a]
+        collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/13] ==> [/usr/lib/gcc/x86_64-linux-gnu/13]
+        collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib64] ==> [/usr/lib64]
+        collapse library dir [/lib/x86_64-linux-gnu] ==> [/lib/x86_64-linux-gnu]
+        collapse library dir [/lib/../lib64] ==> [/lib64]
+        collapse library dir [/usr/lib/x86_64-linux-gnu] ==> [/usr/lib/x86_64-linux-gnu]
+        collapse library dir [/usr/lib/../lib64] ==> [/usr/lib64]
+        collapse library dir [/lib] ==> [/lib]
+        collapse library dir [/usr/lib] ==> [/usr/lib]
+        implicit libs: [stdc++;m;pthread;rt;m;dl;resolv;gcc_s;gcc;c;gcc_s;gcc]
+        implicit objs: [/lib/x86_64-linux-gnu/Scrt1.o;/lib/x86_64-linux-gnu/crti.o;/usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o;/app/AFLplusplus/afl-compiler-rt.o;/usr/lib/gcc/x86_64-linux-gnu/13/crtendS.o;/lib/x86_64-linux-gnu/crtn.o]
+        implicit dirs: [/usr/lib/gcc/x86_64-linux-gnu/13;/usr/lib64;/lib/x86_64-linux-gnu;/lib64;/usr/lib/x86_64-linux-gnu;/lib;/usr/lib]
+        implicit fwks: []
+      
+      
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/CheckFunctionExists.cmake:86 (try_compile)"
+      - "cmake-config.txt:107 (check_function_exists)"
+      - "CMakeLists.txt:15 (include)"
+    checks:
+      - "Looking for mkstemp"
+    directories:
+      source: "/app/diffcomp/benchmark/xpdf-4.05/build/CMakeFiles/CMakeScratch/TryCompile-j6CFRC"
+      binary: "/app/diffcomp/benchmark/xpdf-4.05/build/CMakeFiles/CMakeScratch/TryCompile-j6CFRC"
+    cmakeVariables:
+      CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS-NOTFOUND"
+      CMAKE_C_FLAGS: "-O3 -fsanitize=address,undefined"
+    buildResult:
+      variable: "HAVE_MKSTEMP"
+      cached: true
+      stdout: |
+        Change Dir: '/app/diffcomp/benchmark/xpdf-4.05/build/CMakeFiles/CMakeScratch/TryCompile-j6CFRC'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_7de93/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_7de93.dir/build.make CMakeFiles/cmTC_7de93.dir/build
+        gmake[1]: Entering directory '/app/diffcomp/benchmark/xpdf-4.05/build/CMakeFiles/CMakeScratch/TryCompile-j6CFRC'
+        Building C object CMakeFiles/cmTC_7de93.dir/CheckFunctionExists.c.o
+        /app/AFLplusplus/afl-clang-fast   -O3 -fsanitize=address,undefined -DCHECK_FUNCTION_EXISTS=mkstemp -MD -MT CMakeFiles/cmTC_7de93.dir/CheckFunctionExists.c.o -MF CMakeFiles/cmTC_7de93.dir/CheckFunctionExists.c.o.d -o CMakeFiles/cmTC_7de93.dir/CheckFunctionExists.c.o -c /app/diffcomp/benchmark/xpdf-4.05/build/CMakeFiles/CMakeScratch/TryCompile-j6CFRC/CheckFunctionExists.c
+        Linking C executable cmTC_7de93
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_7de93.dir/link.txt --verbose=1
+        /app/AFLplusplus/afl-clang-fast -O3 -fsanitize=address,undefined -DCHECK_FUNCTION_EXISTS=mkstemp -rdynamic CMakeFiles/cmTC_7de93.dir/CheckFunctionExists.c.o -o cmTC_7de93 
+        gmake[1]: Leaving directory '/app/diffcomp/benchmark/xpdf-4.05/build/CMakeFiles/CMakeScratch/TryCompile-j6CFRC'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/CheckFunctionExists.cmake:86 (try_compile)"
+      - "cmake-config.txt:108 (check_function_exists)"
+      - "CMakeLists.txt:15 (include)"
+    checks:
+      - "Looking for mkstemps"
+    directories:
+      source: "/app/diffcomp/benchmark/xpdf-4.05/build/CMakeFiles/CMakeScratch/TryCompile-ffqeqb"
+      binary: "/app/diffcomp/benchmark/xpdf-4.05/build/CMakeFiles/CMakeScratch/TryCompile-ffqeqb"
+    cmakeVariables:
+      CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS-NOTFOUND"
+      CMAKE_C_FLAGS: "-O3 -fsanitize=address,undefined"
+    buildResult:
+      variable: "HAVE_MKSTEMPS"
+      cached: true
+      stdout: |
+        Change Dir: '/app/diffcomp/benchmark/xpdf-4.05/build/CMakeFiles/CMakeScratch/TryCompile-ffqeqb'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_47720/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_47720.dir/build.make CMakeFiles/cmTC_47720.dir/build
+        gmake[1]: Entering directory '/app/diffcomp/benchmark/xpdf-4.05/build/CMakeFiles/CMakeScratch/TryCompile-ffqeqb'
+        Building C object CMakeFiles/cmTC_47720.dir/CheckFunctionExists.c.o
+        /app/AFLplusplus/afl-clang-fast   -O3 -fsanitize=address,undefined -DCHECK_FUNCTION_EXISTS=mkstemps -MD -MT CMakeFiles/cmTC_47720.dir/CheckFunctionExists.c.o -MF CMakeFiles/cmTC_47720.dir/CheckFunctionExists.c.o.d -o CMakeFiles/cmTC_47720.dir/CheckFunctionExists.c.o -c /app/diffcomp/benchmark/xpdf-4.05/build/CMakeFiles/CMakeScratch/TryCompile-ffqeqb/CheckFunctionExists.c
+        Linking C executable cmTC_47720
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_47720.dir/link.txt --verbose=1
+        /app/AFLplusplus/afl-clang-fast -O3 -fsanitize=address,undefined -DCHECK_FUNCTION_EXISTS=mkstemps -rdynamic CMakeFiles/cmTC_47720.dir/CheckFunctionExists.c.o -o cmTC_47720 
+        gmake[1]: Leaving directory '/app/diffcomp/benchmark/xpdf-4.05/build/CMakeFiles/CMakeScratch/TryCompile-ffqeqb'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/CheckFunctionExists.cmake:86 (try_compile)"
+      - "cmake-config.txt:109 (check_function_exists)"
+      - "CMakeLists.txt:15 (include)"
+    checks:
+      - "Looking for popen"
+    directories:
+      source: "/app/diffcomp/benchmark/xpdf-4.05/build/CMakeFiles/CMakeScratch/TryCompile-CNJdw2"
+      binary: "/app/diffcomp/benchmark/xpdf-4.05/build/CMakeFiles/CMakeScratch/TryCompile-CNJdw2"
+    cmakeVariables:
+      CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS-NOTFOUND"
+      CMAKE_C_FLAGS: "-O3 -fsanitize=address,undefined"
+    buildResult:
+      variable: "HAVE_POPEN"
+      cached: true
+      stdout: |
+        Change Dir: '/app/diffcomp/benchmark/xpdf-4.05/build/CMakeFiles/CMakeScratch/TryCompile-CNJdw2'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_25f42/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_25f42.dir/build.make CMakeFiles/cmTC_25f42.dir/build
+        gmake[1]: Entering directory '/app/diffcomp/benchmark/xpdf-4.05/build/CMakeFiles/CMakeScratch/TryCompile-CNJdw2'
+        Building C object CMakeFiles/cmTC_25f42.dir/CheckFunctionExists.c.o
+        /app/AFLplusplus/afl-clang-fast   -O3 -fsanitize=address,undefined -DCHECK_FUNCTION_EXISTS=popen -MD -MT CMakeFiles/cmTC_25f42.dir/CheckFunctionExists.c.o -MF CMakeFiles/cmTC_25f42.dir/CheckFunctionExists.c.o.d -o CMakeFiles/cmTC_25f42.dir/CheckFunctionExists.c.o -c /app/diffcomp/benchmark/xpdf-4.05/build/CMakeFiles/CMakeScratch/TryCompile-CNJdw2/CheckFunctionExists.c
+        Linking C executable cmTC_25f42
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_25f42.dir/link.txt --verbose=1
+        /app/AFLplusplus/afl-clang-fast -O3 -fsanitize=address,undefined -DCHECK_FUNCTION_EXISTS=popen -rdynamic CMakeFiles/cmTC_25f42.dir/CheckFunctionExists.c.o -o cmTC_25f42 
+        gmake[1]: Leaving directory '/app/diffcomp/benchmark/xpdf-4.05/build/CMakeFiles/CMakeScratch/TryCompile-CNJdw2'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/CheckCXXSourceCompiles.cmake:52 (cmake_check_source_compiles)"
+      - "cmake-config.txt:110 (check_cxx_source_compiles)"
+      - "CMakeLists.txt:15 (include)"
+    checks:
+      - "Performing Test HAVE_STD_SORT"
+    directories:
+      source: "/app/diffcomp/benchmark/xpdf-4.05/build/CMakeFiles/CMakeScratch/TryCompile-xUYZcX"
+      binary: "/app/diffcomp/benchmark/xpdf-4.05/build/CMakeFiles/CMakeScratch/TryCompile-xUYZcX"
+    cmakeVariables:
+      CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS-NOTFOUND"
+      CMAKE_CXX_FLAGS: "-O3 -fsanitize=address,undefined"
+    buildResult:
+      variable: "HAVE_STD_SORT"
+      cached: true
+      stdout: |
+        Change Dir: '/app/diffcomp/benchmark/xpdf-4.05/build/CMakeFiles/CMakeScratch/TryCompile-xUYZcX'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_2eacb/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_2eacb.dir/build.make CMakeFiles/cmTC_2eacb.dir/build
+        gmake[1]: Entering directory '/app/diffcomp/benchmark/xpdf-4.05/build/CMakeFiles/CMakeScratch/TryCompile-xUYZcX'
+        Building CXX object CMakeFiles/cmTC_2eacb.dir/src.cxx.o
+        /app/AFLplusplus/afl-clang-fast++ -DHAVE_STD_SORT  -O3 -fsanitize=address,undefined  -MD -MT CMakeFiles/cmTC_2eacb.dir/src.cxx.o -MF CMakeFiles/cmTC_2eacb.dir/src.cxx.o.d -o CMakeFiles/cmTC_2eacb.dir/src.cxx.o -c /app/diffcomp/benchmark/xpdf-4.05/build/CMakeFiles/CMakeScratch/TryCompile-xUYZcX/src.cxx
+        Linking CXX executable cmTC_2eacb
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_2eacb.dir/link.txt --verbose=1
+        /app/AFLplusplus/afl-clang-fast++ -O3 -fsanitize=address,undefined  -rdynamic CMakeFiles/cmTC_2eacb.dir/src.cxx.o -o cmTC_2eacb 
+        gmake[1]: Leaving directory '/app/diffcomp/benchmark/xpdf-4.05/build/CMakeFiles/CMakeScratch/TryCompile-xUYZcX'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/CheckFunctionExists.cmake:86 (try_compile)"
+      - "cmake-config.txt:118 (check_function_exists)"
+      - "CMakeLists.txt:15 (include)"
+    checks:
+      - "Looking for fseeko"
+    directories:
+      source: "/app/diffcomp/benchmark/xpdf-4.05/build/CMakeFiles/CMakeScratch/TryCompile-Pq9B7v"
+      binary: "/app/diffcomp/benchmark/xpdf-4.05/build/CMakeFiles/CMakeScratch/TryCompile-Pq9B7v"
+    cmakeVariables:
+      CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS-NOTFOUND"
+      CMAKE_C_FLAGS: "-O3 -fsanitize=address,undefined"
+    buildResult:
+      variable: "HAVE_FSEEKO"
+      cached: true
+      stdout: |
+        Change Dir: '/app/diffcomp/benchmark/xpdf-4.05/build/CMakeFiles/CMakeScratch/TryCompile-Pq9B7v'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_9736e/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_9736e.dir/build.make CMakeFiles/cmTC_9736e.dir/build
+        gmake[1]: Entering directory '/app/diffcomp/benchmark/xpdf-4.05/build/CMakeFiles/CMakeScratch/TryCompile-Pq9B7v'
+        Building C object CMakeFiles/cmTC_9736e.dir/CheckFunctionExists.c.o
+        /app/AFLplusplus/afl-clang-fast   -O3 -fsanitize=address,undefined -DCHECK_FUNCTION_EXISTS=fseeko -MD -MT CMakeFiles/cmTC_9736e.dir/CheckFunctionExists.c.o -MF CMakeFiles/cmTC_9736e.dir/CheckFunctionExists.c.o.d -o CMakeFiles/cmTC_9736e.dir/CheckFunctionExists.c.o -c /app/diffcomp/benchmark/xpdf-4.05/build/CMakeFiles/CMakeScratch/TryCompile-Pq9B7v/CheckFunctionExists.c
+        Linking C executable cmTC_9736e
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_9736e.dir/link.txt --verbose=1
+        /app/AFLplusplus/afl-clang-fast -O3 -fsanitize=address,undefined -DCHECK_FUNCTION_EXISTS=fseeko -rdynamic CMakeFiles/cmTC_9736e.dir/CheckFunctionExists.c.o -o cmTC_9736e 
+        gmake[1]: Leaving directory '/app/diffcomp/benchmark/xpdf-4.05/build/CMakeFiles/CMakeScratch/TryCompile-Pq9B7v'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/CheckFunctionExists.cmake:86 (try_compile)"
+      - "cmake-config.txt:119 (check_function_exists)"
+      - "CMakeLists.txt:15 (include)"
+    checks:
+      - "Looking for fseek64"
+    directories:
+      source: "/app/diffcomp/benchmark/xpdf-4.05/build/CMakeFiles/CMakeScratch/TryCompile-l4Fwtu"
+      binary: "/app/diffcomp/benchmark/xpdf-4.05/build/CMakeFiles/CMakeScratch/TryCompile-l4Fwtu"
+    cmakeVariables:
+      CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS-NOTFOUND"
+      CMAKE_C_FLAGS: "-O3 -fsanitize=address,undefined"
+    buildResult:
+      variable: "HAVE_FSEEK64"
+      cached: true
+      stdout: |
+        Change Dir: '/app/diffcomp/benchmark/xpdf-4.05/build/CMakeFiles/CMakeScratch/TryCompile-l4Fwtu'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_fa1b3/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_fa1b3.dir/build.make CMakeFiles/cmTC_fa1b3.dir/build
+        gmake[1]: Entering directory '/app/diffcomp/benchmark/xpdf-4.05/build/CMakeFiles/CMakeScratch/TryCompile-l4Fwtu'
+        Building C object CMakeFiles/cmTC_fa1b3.dir/CheckFunctionExists.c.o
+        /app/AFLplusplus/afl-clang-fast   -O3 -fsanitize=address,undefined -DCHECK_FUNCTION_EXISTS=fseek64 -MD -MT CMakeFiles/cmTC_fa1b3.dir/CheckFunctionExists.c.o -MF CMakeFiles/cmTC_fa1b3.dir/CheckFunctionExists.c.o.d -o CMakeFiles/cmTC_fa1b3.dir/CheckFunctionExists.c.o -c /app/diffcomp/benchmark/xpdf-4.05/build/CMakeFiles/CMakeScratch/TryCompile-l4Fwtu/CheckFunctionExists.c
+        Linking C executable cmTC_fa1b3
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_fa1b3.dir/link.txt --verbose=1
+        /app/AFLplusplus/afl-clang-fast -O3 -fsanitize=address,undefined -DCHECK_FUNCTION_EXISTS=fseek64 -rdynamic CMakeFiles/cmTC_fa1b3.dir/CheckFunctionExists.c.o -o cmTC_fa1b3 
+        /usr/bin/ld: CMakeFiles/cmTC_fa1b3.dir/CheckFunctionExists.c.o: in function `main':
+        /app/diffcomp/benchmark/xpdf-4.05/build/CMakeFiles/CMakeScratch/TryCompile-l4Fwtu/CheckFunctionExists.c:17:(.text+0x19): undefined reference to `fseek64'
+        clang: error: linker command failed with exit code 1 (use -v to see invocation)
+        gmake[1]: *** [CMakeFiles/cmTC_fa1b3.dir/build.make:100: cmTC_fa1b3] Error 1
+        gmake[1]: Leaving directory '/app/diffcomp/benchmark/xpdf-4.05/build/CMakeFiles/CMakeScratch/TryCompile-l4Fwtu'
+        gmake: *** [Makefile:127: cmTC_fa1b3/fast] Error 2
+        
+      exitCode: 2
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/CheckFunctionExists.cmake:86 (try_compile)"
+      - "cmake-config.txt:120 (check_function_exists)"
+      - "CMakeLists.txt:15 (include)"
+    checks:
+      - "Looking for _fseeki64"
+    directories:
+      source: "/app/diffcomp/benchmark/xpdf-4.05/build/CMakeFiles/CMakeScratch/TryCompile-W2Gavv"
+      binary: "/app/diffcomp/benchmark/xpdf-4.05/build/CMakeFiles/CMakeScratch/TryCompile-W2Gavv"
+    cmakeVariables:
+      CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS-NOTFOUND"
+      CMAKE_C_FLAGS: "-O3 -fsanitize=address,undefined"
+    buildResult:
+      variable: "HAVE_FSEEKI64"
+      cached: true
+      stdout: |
+        Change Dir: '/app/diffcomp/benchmark/xpdf-4.05/build/CMakeFiles/CMakeScratch/TryCompile-W2Gavv'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_efa11/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_efa11.dir/build.make CMakeFiles/cmTC_efa11.dir/build
+        gmake[1]: Entering directory '/app/diffcomp/benchmark/xpdf-4.05/build/CMakeFiles/CMakeScratch/TryCompile-W2Gavv'
+        Building C object CMakeFiles/cmTC_efa11.dir/CheckFunctionExists.c.o
+        /app/AFLplusplus/afl-clang-fast   -O3 -fsanitize=address,undefined -DCHECK_FUNCTION_EXISTS=_fseeki64 -MD -MT CMakeFiles/cmTC_efa11.dir/CheckFunctionExists.c.o -MF CMakeFiles/cmTC_efa11.dir/CheckFunctionExists.c.o.d -o CMakeFiles/cmTC_efa11.dir/CheckFunctionExists.c.o -c /app/diffcomp/benchmark/xpdf-4.05/build/CMakeFiles/CMakeScratch/TryCompile-W2Gavv/CheckFunctionExists.c
+        Linking C executable cmTC_efa11
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_efa11.dir/link.txt --verbose=1
+        /app/AFLplusplus/afl-clang-fast -O3 -fsanitize=address,undefined -DCHECK_FUNCTION_EXISTS=_fseeki64 -rdynamic CMakeFiles/cmTC_efa11.dir/CheckFunctionExists.c.o -o cmTC_efa11 
+        /usr/bin/ld: CMakeFiles/cmTC_efa11.dir/CheckFunctionExists.c.o: in function `main':
+        /app/diffcomp/benchmark/xpdf-4.05/build/CMakeFiles/CMakeScratch/TryCompile-W2Gavv/CheckFunctionExists.c:17:(.text+0x19): undefined reference to `_fseeki64'
+        clang: error: linker command failed with exit code 1 (use -v to see invocation)
+        gmake[1]: *** [CMakeFiles/cmTC_efa11.dir/build.make:100: cmTC_efa11] Error 1
+        gmake[1]: Leaving directory '/app/diffcomp/benchmark/xpdf-4.05/build/CMakeFiles/CMakeScratch/TryCompile-W2Gavv'
+        gmake: *** [Makefile:127: cmTC_efa11/fast] Error 2
+        
+      exitCode: 2
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/CheckCSourceCompiles.cmake:52 (cmake_check_source_compiles)"
+      - "/usr/share/cmake-3.28/Modules/FindThreads.cmake:97 (CHECK_C_SOURCE_COMPILES)"
+      - "/usr/share/cmake-3.28/Modules/FindThreads.cmake:163 (_threads_check_libc)"
+      - "cmake-config.txt:322 (find_package)"
+      - "CMakeLists.txt:15 (include)"
+    checks:
+      - "Performing Test CMAKE_HAVE_LIBC_PTHREAD"
+    directories:
+      source: "/app/diffcomp/benchmark/xpdf-4.05/build/CMakeFiles/CMakeScratch/TryCompile-WYTLVk"
+      binary: "/app/diffcomp/benchmark/xpdf-4.05/build/CMakeFiles/CMakeScratch/TryCompile-WYTLVk"
+    cmakeVariables:
+      CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS-NOTFOUND"
+      CMAKE_C_FLAGS: "-O3 -fsanitize=address,undefined"
+    buildResult:
+      variable: "CMAKE_HAVE_LIBC_PTHREAD"
+      cached: true
+      stdout: |
+        Change Dir: '/app/diffcomp/benchmark/xpdf-4.05/build/CMakeFiles/CMakeScratch/TryCompile-WYTLVk'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_5d805/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_5d805.dir/build.make CMakeFiles/cmTC_5d805.dir/build
+        gmake[1]: Entering directory '/app/diffcomp/benchmark/xpdf-4.05/build/CMakeFiles/CMakeScratch/TryCompile-WYTLVk'
+        Building C object CMakeFiles/cmTC_5d805.dir/src.c.o
+        /app/AFLplusplus/afl-clang-fast -DCMAKE_HAVE_LIBC_PTHREAD  -O3 -fsanitize=address,undefined  -MD -MT CMakeFiles/cmTC_5d805.dir/src.c.o -MF CMakeFiles/cmTC_5d805.dir/src.c.o.d -o CMakeFiles/cmTC_5d805.dir/src.c.o -c /app/diffcomp/benchmark/xpdf-4.05/build/CMakeFiles/CMakeScratch/TryCompile-WYTLVk/src.c
+        Linking C executable cmTC_5d805
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_5d805.dir/link.txt --verbose=1
+        /app/AFLplusplus/afl-clang-fast -O3 -fsanitize=address,undefined  -rdynamic CMakeFiles/cmTC_5d805.dir/src.c.o -o cmTC_5d805 
+        gmake[1]: Leaving directory '/app/diffcomp/benchmark/xpdf-4.05/build/CMakeFiles/CMakeScratch/TryCompile-WYTLVk'
+        
+      exitCode: 0
+...

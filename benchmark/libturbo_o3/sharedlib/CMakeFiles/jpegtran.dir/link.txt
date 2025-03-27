@@ -1,0 +1,1 @@
+/app/AFLplusplus/afl-clang-fast -O3 -fsanitize=address -O3 -DNDEBUG CMakeFiles/jpegtran.dir/__/src/jpegtran.c.o CMakeFiles/jpegtran.dir/__/src/cdjpeg.c.o CMakeFiles/jpegtran.dir/__/src/rdswitch.c.o CMakeFiles/jpegtran.dir/__/src/transupp.c.o -o ../jpegtran  -Wl,-rpath,/app/diffcomp/benchmark/libturbo_o3:::: ../libjpeg.so.62.4.0 

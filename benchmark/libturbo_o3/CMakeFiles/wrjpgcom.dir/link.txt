@@ -1,0 +1,1 @@
+/app/AFLplusplus/afl-clang-fast -O3 -fsanitize=address -O3 -DNDEBUG CMakeFiles/wrjpgcom.dir/src/wrjpgcom.c.o -o wrjpgcom  -Wl,-rpath,::::::::::::::::::::::::::::::::::::::: 
