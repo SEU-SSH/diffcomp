@@ -1,5 +1,6 @@
 wget https://github.com/Exiv2/exiv2/archive/refs/tags/v0.28.5.tar.gz
 tar -xvf v0.28.5.tar.gz
+rm -rf v0.28.5.tar.gz
 mkdir benchmark_exiv2 benchmark_exiv2/exiv2_o0 benchmark_exiv2/exiv2_o3
 cd exiv2-0.28.5
 

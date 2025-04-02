@@ -1,4 +1,5 @@
 export AFL_I_DONT_CARE_ABOUT_MISSING_CRASHES=1
+
 export LD_LIBRARY_PATH="./exiv2-0.28.5/build_o0/lib:$LD_LIBRARY_PATH" 
 
 #依赖项
