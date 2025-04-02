@@ -1,0 +1,49 @@
+Performing C++ SOURCE FILE Test HAVE_ISO_STRDUP failed with the following output:
+Change Dir: /mnt/e/srtp/Software_Vulnerality/diffcomp/ncmdump/build_o3/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_142cc/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_142cc.dir/build.make CMakeFiles/cmTC_142cc.dir/build
+gmake[1]: Entering directory '/mnt/e/srtp/Software_Vulnerality/diffcomp/ncmdump/build_o3/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_142cc.dir/src.cxx.o
+/mnt/e/srtp/Software_Vulnerality/diffcomp/AFLplusplus/afl-c++ -DHAVE_ISO_STRDUP  -Wall  -MD -MT CMakeFiles/cmTC_142cc.dir/src.cxx.o -MF CMakeFiles/cmTC_142cc.dir/src.cxx.o.d -o CMakeFiles/cmTC_142cc.dir/src.cxx.o -c /mnt/e/srtp/Software_Vulnerality/diffcomp/ncmdump/build_o3/CMakeFiles/CMakeTmp/src.cxx
+/mnt/e/srtp/Software_Vulnerality/diffcomp/ncmdump/build_o3/CMakeFiles/CMakeTmp/src.cxx:4:5: error: use of undeclared identifier '_strdup'; did you mean 'strdup'?
+    _strdup(0);
+    ^~~~~~~
+    strdup
+/usr/include/string.h:187:14: note: 'strdup' declared here
+extern char *strdup (const char *__s)
+             ^
+/mnt/e/srtp/Software_Vulnerality/diffcomp/ncmdump/build_o3/CMakeFiles/CMakeTmp/src.cxx:4:14: warning: null passed to a callee that requires a non-null argument [-Wnonnull]
+    _strdup(0);
+            ~^
+1 warning and 1 error generated.
+gmake[1]: *** [CMakeFiles/cmTC_142cc.dir/build.make:79: CMakeFiles/cmTC_142cc.dir/src.cxx.o] Error 1
+gmake[1]: Leaving directory '/mnt/e/srtp/Software_Vulnerality/diffcomp/ncmdump/build_o3/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_142cc/fast] Error 2
+
+
+Source file was:
+
+  #include <cstring>
+  int main() {
+    _strdup(0);
+    return 0;
+  }
+
+Determining if the function __RTTI___ exists in the Crun failed with the following output:
+Change Dir: /mnt/e/srtp/Software_Vulnerality/diffcomp/ncmdump/build_o3/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_34979/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_34979.dir/build.make CMakeFiles/cmTC_34979.dir/build
+gmake[1]: Entering directory '/mnt/e/srtp/Software_Vulnerality/diffcomp/ncmdump/build_o3/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_34979.dir/CheckFunctionExists.c.o
+/mnt/e/srtp/Software_Vulnerality/diffcomp/AFLplusplus/afl-cc   -Wall -DCHECK_FUNCTION_EXISTS=__RTTI___ -MD -MT CMakeFiles/cmTC_34979.dir/CheckFunctionExists.c.o -MF CMakeFiles/cmTC_34979.dir/CheckFunctionExists.c.o.d -o CMakeFiles/cmTC_34979.dir/CheckFunctionExists.c.o -c /usr/share/cmake-3.22/Modules/CheckFunctionExists.c
+Linking C executable cmTC_34979
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_34979.dir/link.txt --verbose=1
+/mnt/e/srtp/Software_Vulnerality/diffcomp/AFLplusplus/afl-cc  -Wall -DCHECK_FUNCTION_EXISTS=__RTTI___ CMakeFiles/cmTC_34979.dir/CheckFunctionExists.c.o -o cmTC_34979  -lCrun 
+/usr/bin/ld: cannot find -lCrun: No such file or directory
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+gmake[1]: *** [CMakeFiles/cmTC_34979.dir/build.make:100: cmTC_34979] Error 1
+gmake[1]: Leaving directory '/mnt/e/srtp/Software_Vulnerality/diffcomp/ncmdump/build_o3/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_34979/fast] Error 2
+
+
+

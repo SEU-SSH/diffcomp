@@ -1,0 +1,1 @@
+/mnt/e/srtp/Software_Vulnerality/diffcomp/AFLplusplus/afl-c++ -O0 -O3 CMakeFiles/ncmdump_exec.dir/src/ncmcrypt.cpp.o CMakeFiles/ncmdump_exec.dir/src/utils/aes.cpp.o CMakeFiles/ncmdump_exec.dir/src/utils/cJSON.cpp.o CMakeFiles/ncmdump_exec.dir/src/main.cpp.o -o ncmdump  taglib/taglib/libtag.a 
