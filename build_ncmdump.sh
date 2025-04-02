@@ -3,7 +3,7 @@
 #git clone https://github.com/taurusxin/ncmdump.git
 cd ncmdump
 
-cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_C_COMPILER=/mnt/srtp/Soafl-cc -DCMAKE_CXX_COMPILER=afl-c++ -DCMAKE_CXX_FLAGS_RELEASE=-O0 -B build_o0 &&
+cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_C_COMPILER=afl-cc -DCMAKE_CXX_COMPILER=afl-c++ -DCMAKE_CXX_FLAGS_RELEASE=-O0 -B build_o0 &&
 cmake --build build_o0 -j 8 &&
 echo binary file 'ncmdump' compiled in O0 has been written in build_o0 &&
 sudo cp ./build_o0/ncmdump ../benchmark_ncmdump/ncmdump_o0/ &&
