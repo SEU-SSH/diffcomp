@@ -1,0 +1,6 @@
+# environment variables:
+AFL_CUSTOM_INFO_PROGRAM=benchmark/xpdf_o1/pdftotext
+AFL_CUSTOM_INFO_PROGRAM_ARGV=-someopt @@
+AFL_CUSTOM_INFO_OUT=output/default
+# command line:
+'afl-fuzz' '-i' './corpus/pdf' '-o' 'output' '--' 'benchmark/xpdf_o1/pdftotext' '-someopt' '@@'
