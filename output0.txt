@@ -1,0 +1,5 @@
+STRUCTURE OF PNG FILE: ./corpus/image/file.png
+ address | chunk |  length | data                           | checksum
+       8 | IHDR  |      13 | ...H...H....                   | 0x55edb347
+      33 | IDAT  |    7842 | x..|{tT...s...}B&.[.&.\!..L .. | 0x257b3932
+    7887 | IEND  |       0 |                                | 0xae426082

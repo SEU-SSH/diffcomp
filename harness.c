@@ -10,7 +10,10 @@
 void run_ncmdump(const char *program, const char *input, const char *output) {
   pid_t pid = fork();
   if (pid == 0) {  // 子进程
-    execl(program, program,"-d",input,"-o", output, NULL);
+    //execl(program, program,"-pS",input,"|tee", output, NULL);
+    char command[256];
+    snprintf(command, sizeof(command), "%s -pS %s | tee %s",program, input, output);
+    execl("/bin/sh", "sh", "-c",command, (char *)NULL);
     fprintf(stderr, "execl failed: %s\n", strerror(errno));
     exit(1);
   } else if (pid > 0) {  // 父进程
@@ -29,13 +32,13 @@ int main(int argc, char **argv) {
   }
 
   const char *input = argv[1];          // 输入文件
-  const char *output0 = "output0";  // 输出文件0
-  const char *output3 = "output3";  // 输出文件3
+  const char *output0 = "output0.txt";  // 输出文件0
+  const char *output3 = "output3.txt";  // 输出文件3
 
   // 运行两个版本的pdftotext
-  run_ncmdump("./benchmark_ncmdump/ncmdump_o0/ncmdump", input,
+  run_ncmdump("./benchmark_exiv2/exiv2_o0/exiv2", input,
                 output0);  // 运行xpdf_o0版本的pdftotext
-  run_ncmdump("./benchmark_ncmdump/ncmdump_o3/ncmdump", input,
+  run_ncmdump("./benchmark_exiv2/exiv2_o3/exiv2", input,
                 output3);  // 运行xpdf_o3版本的pdftotext
 
   // 比较输出文件

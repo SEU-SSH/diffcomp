@@ -1,2 +1,3 @@
-./harness
+./benchmark_exiv2/exiv2_o0/exiv2
+-pS
 @@

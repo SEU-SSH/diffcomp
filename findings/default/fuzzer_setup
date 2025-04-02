@@ -1,0 +1,9 @@
+# environment variables:
+AFL_CUSTOM_INFO_PROGRAM=./benchmark_exiv2/exiv2_o0/exiv2
+AFL_CUSTOM_INFO_PROGRAM_ARGV=-pS @@
+AFL_CUSTOM_INFO_OUT=findings/default
+AFL_DEBUG=1
+AFL_I_DONT_CARE_ABOUT_MISSING_CRASHES=1
+AFL_MAP_SIZE=10000000
+# command line:
+'afl-fuzz' '-i' './corpus/image/' '-o' 'findings' '--' './benchmark_exiv2/exiv2_o0/exiv2' '-pS' '@@'
