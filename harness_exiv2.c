@@ -32,8 +32,8 @@ int main(int argc, char **argv) {
   }
 
   const char *input = argv[1];          // 输入文件
-  const char *output0 = "output0.txt";  // 输出文件0
-  const char *output3 = "output3.txt";  // 输出文件3
+  const char *output0 = "output0_exiv2.txt";  // 输出文件0
+  const char *output3 = "output3_exiv2.txt";  // 输出文件3
 
   // 运行两个版本的pdftotext
   run_ncmdump("./benchmark_exiv2/exiv2_o0/exiv2", input,
