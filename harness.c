@@ -1,71 +1,43 @@
-#define _GNU_SOURCE
 #include <stdio.h>
 #include <stdlib.h>
-#include <unistd.h>
 #include <string.h>
-#include <sys/wait.h>
-#include <errno.h>
+#include <unistd.h>
 
-void run_pdftotext(const char *program, const char *input, const char *output) {
-    pid_t pid = fork();
-    if (pid == 0) {
-        execl(program, program, input, output, NULL);
-        fprintf(stderr, "execl failed: %s\n", strerror(errno));
-        exit(1);
-    } else if (pid > 0) {
-        int status;
-        waitpid(pid, &status, 0);
-    } else {
-        perror("fork");
-        exit(1);
-    }
+int run_cmd(const char *cmd, const char *input_file, const char *output_file) {
+    char full_cmd[1024];
+    snprintf(full_cmd, sizeof(full_cmd), "%s %s > %s 2>&1", cmd, input_file, output_file);
+    return system(full_cmd);
 }
 
-int main(int argc, char **argv) {
+int main(int argc, char *argv[]) {
     if (argc < 2) {
-        fprintf(stderr, "Usage: %s <input_file>\n", argv[0]);
+        fprintf(stderr, "Usage: %s <input>\n", argv[0]);
         return 1;
     }
 
     const char *input = argv[1];
-    const char *output0 = "output0.txt";
-    const char *output3 = "output3.txt";
+    const char *cmd_O0 = "./tcpdump_O0 -nn -r";
+    const char *cmd_O3 = "./tcpdump_O3 -nn -r";
 
-    // 运行两个版本的pdftotext
-    run_pdftotext("./benchmark/xpdf_o0/pdftotext", input, output0);
-    run_pdftotext("./benchmark/xpdf_o3/pdftotext", input, output3);
+    run_cmd(cmd_O0, input, "differences/o0_out.txt");
+    run_cmd(cmd_O3, input, "differences/o3_out.txt");
 
-    // 比较输出文件
-    FILE *f0 = fopen(output0, "r");
-    FILE *f3 = fopen(output3, "r");
-    if (!f0 || !f3) {
-        if (f0) fclose(f0);
-        if (f3) fclose(f3);
-        return 0;
-    }
+    FILE *f1 = fopen("differences/o0_out.txt", "rb");
+    FILE *f2 = fopen("differences/o3_out.txt", "rb");
+
+    if (!f1 || !f2) return 1;
 
     int diff = 0;
-    char buf0[4096], buf3[4096];
-    size_t n0, n3;
-    do {
-        n0 = fread(buf0, 1, sizeof(buf0), f0);
-        n3 = fread(buf3, 1, sizeof(buf3), f3);
-        if (n0 != n3 || memcmp(buf0, buf3, n0) != 0) {
+    int c1, c2;
+    while ((c1 = fgetc(f1)) != EOF && (c2 = fgetc(f2)) != EOF) {
+        if (c1 != c2) {
             diff = 1;
             break;
         }
-    } while (n0 > 0);
-
-    fclose(f0);
-    fclose(f3);
-
-    // 输出不同时保存输入并触发崩溃
-    if (diff) {
-        char cmd[1024];
-        snprintf(cmd, sizeof(cmd), "cp '%s' ./differences/", input);
-        system(cmd);
-        abort();  // 触发AFL++记录为crash
     }
 
-    return 0;
+    fclose(f1);
+    fclose(f2);
+
+    return diff;
 }
