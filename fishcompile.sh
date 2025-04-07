@@ -53,4 +53,3 @@ $AFL_PATH/afl-clang-fast -O2 -g -I./benchmark/tiff-4.5.1/build_O0/install_O0/inc
     -L./benchmark/tiff-4.5.1/build_O0/install_O0/lib -ltiff -lz -lm
 
 echo "[+] Build complete."
-
