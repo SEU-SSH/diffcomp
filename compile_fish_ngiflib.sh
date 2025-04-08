@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # 设置变量
 PROJECT_DIR="/app/diffcomp"
 SOURCE_DIR="$PROJECT_DIR/benchmark/ngiflib"          # 源码目录
@@ -10,9 +12,38 @@ NGIFLIB_REPO="https://github.com/miniupnp/ngiflib.git"  # ngiflib 仓库地址
 NGIFLIB_REPO_HTTP="http://github.com/miniupnp/ngiflib.git"  # HTTP 备用地址
 FISHFUZZ_DIR="/Fish++"  # FishFuzz 安装目录
 
+# 检查依赖项是否已安装
+check_dependencies() {
+    local dependencies=("pkg-config" "libsdl1.2-dev" "git" "wget")
+    for dep in "${dependencies[@]}"; do
+        if ! dpkg -l | grep -q "$dep"; then
+            echo "[-] Missing dependency: $dep"
+            echo "[*] Attempting to install $dep..."
+            apt-get update && apt-get install -y "$dep" || { echo "[-] Failed to install $dep"; exit 1; }
+        fi
+    done
+}
+
+# 确保 Makefile 配置正确
+fix_makefile() {
+    local makefile_path="$1"
+    if [[ -f "$makefile_path" ]]; then
+        echo "[*] Fixing Makefile at $makefile_path..."
+        sed -i '/CFLAGS/s/$/ $(shell pkg-config --cflags sdl)/' "$makefile_path"
+        sed -i '/LDFLAGS/s/$/ $(shell pkg-config --libs sdl)/' "$makefile_path"
+    else
+        echo "[-] Makefile not found at $makefile_path"
+        exit 1
+    fi
+}
+
 # 检查并创建项目目录
 echo "[*] Creating project directory..."
 mkdir -p "$PROJECT_DIR"
+
+# 检查依赖项
+echo "[*] Checking dependencies..."
+check_dependencies
 
 # 获取 ngiflib 源码
 echo "[*] Fetching ngiflib source code from $NGIFLIB_REPO..."
@@ -47,7 +78,8 @@ fi
 echo "[*] Cleaning old files..."
 mkdir -p "$NGIFLIB0_DIR"
 mkdir -p "$NGIFLIB3_DIR"
-rm -rf "$NGIFLIB0_DIR"/* "$NGIFLIB3_DIR"/*
+find "$NGIFLIB0_DIR" -mindepth 1 -delete
+find "$NGIFLIB3_DIR" -mindepth 1 -delete
 
 # 复制源码到目标目录
 echo "[*] Copying source code to target directories..."
@@ -55,8 +87,8 @@ cp -r "$SOURCE_DIR"/* "$NGIFLIB0_DIR"/
 cp -r "$SOURCE_DIR"/* "$NGIFLIB3_DIR"/
 
 # 设置 FishFuzz 环境变量
-export FF_DRIVER_NAME="gif2txt"  # 我们要fuzz的目标程序
-export PREFUZZ="$FISHFUZZ_DIR/FF_AFL++"  # 使用FF_AFL++
+export FF_DRIVER_NAME="gif2txt"  # 我们要 fuzz 的目标程序
+export PREFUZZ="$FISHFUZZ_DIR/FF_AFL++"  # 使用 FF_AFL++
 
 # 编译 ngiflib0（O0 版本）使用 FishFuzz
 echo "[*] Compiling ngiflib0 (O0 version) with FishFuzz..."
@@ -65,6 +97,9 @@ if [[ ! -f "Makefile" ]]; then
     echo "[-] Makefile not found in $NGIFLIB0_DIR"
     exit 1
 fi
+
+# 修复 Makefile 配置
+fix_makefile "$NGIFLIB0_DIR/Makefile"
 
 # 使用 FishFuzz 的 all-in-one 包装器进行编译
 export CC="$FISHFUZZ_DIR/ff-all-in-one -fsanitize=address"
@@ -88,6 +123,9 @@ if [[ ! -f "Makefile" ]]; then
     echo "[-] Makefile not found in $NGIFLIB3_DIR"
     exit 1
 fi
+
+# 修复 Makefile 配置
+fix_makefile "$NGIFLIB3_DIR/Makefile"
 
 # 使用 FishFuzz 的 all-in-one 包装器进行编译
 export CC="$FISHFUZZ_DIR/ff-all-in-one -fsanitize=address"
@@ -120,3 +158,5 @@ if [[ ! -f "$CORPUS_GIF_DIR/earth.gif" && ! -f "$CORPUS_GIF_DIR/dog.gif" ]]; the
     echo "[!] Warning: Failed to download sample GIF files, corpus will be empty"
     echo "[!] You may want to manually add some GIF files to $CORPUS_GIF_DIR"
 fi
+
+echo "[+] All steps completed successfully!"
