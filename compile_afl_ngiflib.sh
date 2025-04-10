@@ -10,9 +10,25 @@ CORPUS_DIR="$PROJECT_DIR/corpus"
 CORPUS_GIF_DIR="$CORPUS_DIR/gif"
 NGIFLIB_REPO="https://github.com/miniupnp/ngiflib.git"  # ngiflib 仓库地址
 
+# 检查依赖项是否已安装
+check_dependencies() {
+    local dependencies=("pkg-config" "libsdl1.2-dev" "git" "wget")
+    for dep in "${dependencies[@]}"; do
+        if ! dpkg -l | grep -q "$dep"; then
+            echo "[-] Missing dependency: $dep"
+            echo "[*] Attempting to install $dep..."
+            apt-get update && apt-get install -y "$dep" || { echo "[-] Failed to install $dep"; exit 1; }
+        fi
+    done
+}
+
 # 检查并创建项目目录
 echo "[*] Creating project directory..."
 mkdir -p "$PROJECT_DIR"
+
+# 检查依赖项
+echo "[*] Checking dependencies..."
+check_dependencies
 
 # 获取 ngiflib 源码
 echo "[*] Fetching ngiflib source code from $NGIFLIB_REPO..."
@@ -33,20 +49,31 @@ fi
 echo "[*] Cleaning old files..."
 mkdir -p "$NGIFLIB0_DIR"
 mkdir -p "$NGIFLIB3_DIR"
-rm -rf "$NGIFLIB0_DIR"/* "$NGIFLIB3_DIR"/*
+find "$NGIFLIB0_DIR" -mindepth 1 -delete
+find "$NGIFLIB3_DIR" -mindepth 1 -delete
 
 # 复制源码到目标目录
 echo "[*] Copying source code to target directories..."
 cp -r "$SOURCE_DIR"/* "$NGIFLIB0_DIR"/
 cp -r "$SOURCE_DIR"/* "$NGIFLIB3_DIR"/
 
+# 确保 Makefile 配置正确
+fix_makefile() {
+    local makefile_path="$1"
+    if [[ -f "$makefile_path" ]]; then
+        echo "[*] Fixing Makefile at $makefile_path..."
+        sed -i '/CFLAGS/s/$/ $(shell pkg-config --cflags sdl)/' "$makefile_path"
+        sed -i '/LDFLAGS/s/$/ $(shell pkg-config --libs sdl)/' "$makefile_path"
+    else
+        echo "[-] Makefile not found at $makefile_path"
+        exit 1
+    fi
+}
+
 # 编译 ngiflib0（O0 版本）
 echo "[*] Compiling ngiflib0 (O0 version) with ASan and UBSan..."
 cd "$NGIFLIB0_DIR" || { echo "[-] Failed to enter $NGIFLIB0_DIR"; exit 1; }
-if [[ ! -f "Makefile" ]]; then
-    echo "[-] Makefile not found in $NGIFLIB0_DIR"
-    exit 1
-fi
+fix_makefile "$NGIFLIB0_DIR/Makefile"
 make clean
 make CC=/app/AFLplusplus/afl-clang-fast CXX=/app/AFLplusplus/afl-clang-fast++ \
     CFLAGS="-O0 -g -fsanitize=address,undefined" \
@@ -56,10 +83,7 @@ make CC=/app/AFLplusplus/afl-clang-fast CXX=/app/AFLplusplus/afl-clang-fast++ \
 # 编译 ngiflib3（O3 版本）
 echo "[*] Compiling ngiflib3 (O3 version) with ASan and UBSan..."
 cd "$NGIFLIB3_DIR" || { echo "[-] Failed to enter $NGIFLIB3_DIR"; exit 1; }
-if [[ ! -f "Makefile" ]]; then
-    echo "[-] Makefile not found in $NGIFLIB3_DIR"
-    exit 1
-fi
+fix_makefile "$NGIFLIB3_DIR/Makefile"
 make clean
 make CC=/app/AFLplusplus/afl-clang-fast CXX=/app/AFLplusplus/afl-clang-fast++ \
     CFLAGS="-O3 -g -fsanitize=address,undefined" \
