@@ -34,7 +34,11 @@ export AFL_FORKSRV_INIT_TMOUT=5000
 
 # 修改 core_pattern 配置
 echo "[*] Modifying core_pattern..."
-echo core > /proc/sys/kernel/core_pattern
+if [[ -w /proc/sys/kernel/core_pattern ]]; then
+    echo core > /proc/sys/kernel/core_pattern
+else
+    echo "[-] Warning: Cannot modify core_pattern (read-only file system). Skipping..."
+fi
 
 # 禁用 CPU 绑定
 export AFL_NO_AFFINITY=1
@@ -50,15 +54,26 @@ mkdir -p "$OUTPUT_DIR"
 CORES=$(nproc)
 SLAVES=$((CORES - 1))
 
+# 清理旧的 screen 会话
+if screen -ls | grep -q "afl_fuzz_master"; then
+    echo "[*] Cleaning up old screen session..."
+    screen -S afl_fuzz_master -X quit
+fi
+
+# 启动 screen 会话
+screen -dmS afl_fuzz_master
+
 # 主实例绑定至 CPU 0
 echo "[*] Starting Master instance (bound to CPU 0)..."
-taskset -c 0 afl-fuzz -i "$CORPUS_DIR" -o "$OUTPUT_DIR" -M master -t 5000 -- "$HARNESS" @@ &
+screen -S afl_fuzz_master -X screen -t master bash -c "timeout 8h taskset -c 0 afl-fuzz -i \"$CORPUS_DIR\" -o \"$OUTPUT_DIR\" -M master -t 5000 -- \"$HARNESS\" @@"
 
 # 从实例绑定至其他 CPU 核心
-echo "[*] Starting $SLAVES Slave instances..."
-seq 1 $SLAVES | parallel -j $SLAVES "taskset -c {} afl-fuzz -i '$CORPUS_DIR' -o '$OUTPUT_DIR' -S slave{} -t 5000 -- '$HARNESS' @@ > slave{}.log 2>&1 &"
+for i in $(seq 1 $SLAVES); do
+    echo "[*] Starting Slave instance $i (bound to CPU $i)..."
+    screen -S afl_fuzz_master -X screen -t slave$i bash -c "timeout 8h taskset -c $i afl-fuzz -i \"$CORPUS_DIR\" -o \"$OUTPUT_DIR\" -S slave$i -t 5000 -- \"$HARNESS\" @@"
+done
 
-# 等待所有后台进程完成
-wait
-
-echo "[+] Fuzzing process completed successfully!"
+# 提示用户如何查看屏幕会话
+echo "[+] AFL-Fuzz instances are running in a screen session."
+echo "To view the sessions, run: 'screen -r afl_fuzz_master'"
+echo "[+] All instances will automatically stop after 8 hours."
