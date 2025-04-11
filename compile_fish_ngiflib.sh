@@ -8,8 +8,8 @@ NGIFLIB0_DIR="$BENCHMARK_DIR/ngiflib_fish0"    # O0 编译结果目录
 NGIFLIB3_DIR="$BENCHMARK_DIR/ngiflib_fish3"    # O3 编译结果目录
 CORPUS_DIR="$PROJECT_DIR/corpus"
 CORPUS_GIF_DIR="$CORPUS_DIR/gif"
-NGIFLIB_REPO="https://github.com/miniupnp/ngiflib.git"  # ngiflib 仓库地址
-NGIFLIB_REPO_HTTP="http://github.com/miniupnp/ngiflib.git"  # HTTP 备用地址
+NGIFLIB_REPO="https://github.com/miniupnp/ngiflib.git"  
+NGIFLIB_REPO_HTTP="http://github.com/miniupnp/ngiflib.git"  
 FISHFUZZ_DIR="/Fish++"  # FishFuzz 安装目录
 
 # 检查依赖项是否已安装
